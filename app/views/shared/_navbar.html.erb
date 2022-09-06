@@ -1,10 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon leather">
   <div class="container-fluid">
-    <div class="d-flex align-items-center" >
+    <div class="nav-logo" >
       <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag "https://vignette1.wikia.nocookie.net/tinyzoo/images/1/18/Bookworm_single.png/revision/latest?cb=20130717004909" %>
+        <%= image_tag "https://img00.deviantart.net/0afe/i/2018/205/a/f/paper_mario__jumping__remake_by_fawfulthegreat64-dci6r36.png", class: "nav-pic" %>
       <% end %>
-      <h1>Nintendo Switch Game Sorter</h1>
+      <%# <a href="https://fontmeme.com/fonts/pretendo-font/"><img src="https://fontmeme.com/permalink/220906/24b9abe2a9e2cf0a484537c9751d74e0.png" alt="pretendo-font" border="0"></a> %>
+      <a><img src="https://see.fontimg.com/api/renderfont4/1G9Be/eyJyIjoiZnMiLCJoIjo1MywidyI6MTAwMCwiZnMiOjUzLCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzM1M0Q0QiIsInQiOjF9/U1dJVENIRVI/snes-italic.png" alt="Gaming fonts"></a>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,13 +15,13 @@
       <ul class="navbar-nav me-auto d-flex align-items-center" >
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Shop", shop_path(current_user), class: "nav-link" %>
+            <%= link_to "Shop", "#", class: "sign-log" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Basket", basket_path(current_user), class: "nav-link" %>
+            <%= link_to "Basket", "#", class: "sign-log" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "sign-log" %>
           </li>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -31,10 +32,10 @@
           </li>
         <% else %>
           <li>
-            <%= link_to "Sign Up", new_user_registration_path, class: "text-decoration-none nav-link" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "sign-log" %>
           </li>
           <li>
-            <%= link_to "Log in", new_user_session_path, class: "text-decoration-none nav-link" %>
+            <%= link_to "Log in", new_user_session_path, class: "sign-log" %>
           </li>
 
         <% end %>
