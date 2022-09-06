@@ -9,4 +9,8 @@ class UsersController < ApplicationController
     @baned = User.games
   end
 
+  def user_params
+    params.require(:user).permit(:title, :body, :photo)
+  end
+
 end
