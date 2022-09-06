@@ -1,0 +1,13 @@
+<!-- <%= render :partial => 'search_bar' %>  -->
+
+
+<%= form_with url: books_path, method: :get, class: "d-flex" do %>
+<%= text_field_tag :query,
+params[:query],
+class: "form-control",
+id: "search-bar-input",
+:size=>"105",
+placeholder: "Find game"
+%>
+<%= submit_tag "Search", class: "btn", id: "search-button" %>
+<% end %>
