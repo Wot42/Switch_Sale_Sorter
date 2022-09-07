@@ -1,6 +1,35 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $nint-red;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.nav-pic {
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.sign-log {
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 20px;
+  font-weight: 100;
+  font-family: $nav-font;
+}
+
+.sign-log:hover {
+  color: $nint-red;
+  border: 2px solid $nint-red;
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
