@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $nint-red;
+  height: 15vh;
 }
 
 .nav-logo {
@@ -10,9 +11,27 @@
 }
 
 .nav-pic {
-  width: 50px;
+  width: auto;
   border-radius: 50%;
   background-color: white;
+}
+
+.nav-title {
+  width: auto;
+  height: auto;
+}
+
+.navbar-lewagon .navbar-brand img {
+  height: 10vh;
+}
+
+.navbar-signlog {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 10vh;
+  list-style-type: none;
 }
 
 .sign-log {
@@ -21,7 +40,6 @@
   padding: 10px;
   border-radius: 10px;
   text-decoration: none;
-  margin: 20px;
   font-weight: 100;
   font-family: $nav-font;
 }
@@ -34,8 +52,4 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
