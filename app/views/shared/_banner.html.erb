@@ -1,10 +1,30 @@
 <div class="banner">
-  <div class=l-color></div>
-  <div class=banner-pic>
-    <div class="banner-info">
-      <h1>Real games, real  BARGAINS!</h1>
-      <p>#</p>
+  <div class="l-color"></div>
+
+  <div class="main-switch-container">
+
+    <div class="banner-pic">
+
+      <div class="banner-info">
+        <h1>Real games, real  BARGAINS!</h1>
+      </div>
+
+      <div class="banner-bot">
+        <div class=active-users>
+          <p>Most active users!</p>
+        </div>
+
+        <div class="user-cards">
+          <%= render "shared/user_card" %>
+          <%= render "shared/user_card" %>
+          <%= render "shared/user_card" %>
+          <%= render "shared/user_card" %>
+        </div>
+      </div>
+
     </div>
+
   </div>
-  <div class=r-color></div>
+
+  <div class="r-color"></div>
 </div>
