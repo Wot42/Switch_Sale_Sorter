@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def baned
     @user = User.find(params[:id])
-    @baned = User.games
+    @banned = User.games
   end
 
   def user_params
