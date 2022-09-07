@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import FetchGamesController from "./fetch_games_controller"
+application.register("fetch-games", FetchGamesController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

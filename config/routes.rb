@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   get "/users/:id/baned", to: "users#baned", as: "baned"
+  post "/games", to: "games#create"
 
 end
 
