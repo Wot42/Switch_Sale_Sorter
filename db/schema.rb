@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_06_102618) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_07_134909) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,12 +54,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_102618) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "pic"
-    t.integer "price"
-    t.integer "sale_price"
-    t.string "genre"
     t.string "api_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "tags", default: [], array: true
+    t.decimal "price"
+    t.decimal "sale_price"
+    t.decimal "discount_percentage"
+    t.string "url"
+    t.text "tagline"
+    t.integer "age_rating"
+    t.integer "players"
+    t.boolean "active_sale"
+    t.date "sale_start"
+    t.date "sale_end"
   end
 
   create_table "users", force: :cascade do |t|

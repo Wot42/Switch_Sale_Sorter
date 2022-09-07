@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users, only: [:show]
   get "/users/:id/baned", to: "users#baned", as: "baned"
+  get "/games/updateall", to: "games#update_all"
 
 end
 

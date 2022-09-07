@@ -1,2 +1,8 @@
 <h1>Games#show</h1>
 <p>Find me in app/views/games/show.html.erb</p>
+<ol>
+<%= @games[0] %>
+<% @games.each do |game| %>
+<li><%= game.title %></li>
+<% end %>
+</ol>
