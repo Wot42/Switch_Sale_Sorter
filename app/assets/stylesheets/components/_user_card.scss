@@ -6,6 +6,16 @@
   width: 150px;
   border-radius: 10px;
   border: 1px solid white;
+  transition: width .5s, height .5s;
+}
+
+.user-card:hover {
+  height: 300px;
+  width: 300px;
+& p {
+    font-size: 20px;
+    opacity: 1;
+  }
 }
 
 .avatar-card{
