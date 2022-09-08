@@ -5,6 +5,7 @@ require 'date'
 class GamesController < ApplicationController
   def show
     @games = Game.all
+    @game=@games[5]
   end
 
   def update_all
