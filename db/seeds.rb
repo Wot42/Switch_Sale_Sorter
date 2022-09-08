@@ -18,10 +18,3 @@ user3 = User.create(user_name: "Zelda", picture: "https://i.pinimg.com/originals
 puts "creating #{user1.email} "
 puts "creating #{user2.email} "
 puts "creating #{user3.email} "
-
-puts "creating Games"
-game1 = Game.create(title: "#1 Crosswords Bundle", price: 5.49, sale_price: 1.37, genre: "Puzzle", pic: "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_1CrosswordsBundle_image1600w.jpg", api_id: "/Games/Nintendo-Switch-download-software/-1-Anagrams-1965260.html")
-
-puts "creating #{game1.title} "
-
-puts "games created #{Game.all.length}"

@@ -1,12 +1,55 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $nint-red;
+  height: 15vh;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.nav-pic {
+  width: auto;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.nav-title {
+  width: auto;
+  height: auto;
+}
+
+.navbar-lewagon .navbar-brand img {
+  height: 10vh;
+}
+
+.navbar-signlog {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 10vh;
+  list-style-type: none;
+}
+
+.sign-log {
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 100;
+  font-family: $nav-font;
+}
+
+.sign-log:hover {
+  color: $nint-red;
+  border: 2px solid $nint-red;
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }

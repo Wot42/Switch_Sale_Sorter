@@ -1,9 +1,15 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url("http://db.onlinewebfonts.com/c/487390d5558cff7a17ce35d7d92a0540?family=Pretendo");
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// $body-font: "Pretendo";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+$headers-font: "Pretendo";
+
+$nav-font: "Pretendo"
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
