@@ -2,14 +2,14 @@
   overflow: hidden;
   color: $light-font;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 105px;
+  height: 160px;
   width: 150px;
   border-radius: 10px;
   transition: width .5s, height .5s;
 }
 
 .user-card:hover {
-  height: 120px;
+  height: 180px;
   width: 180px;
 & h2 {
     font-size: 20px;
