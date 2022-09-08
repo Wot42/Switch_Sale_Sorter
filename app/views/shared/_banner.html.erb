@@ -7,21 +7,12 @@
 
       <div class="banner-info">
         <h1>Real games, real  BARGAINS!</h1>
+        <% if !user_signed_in?%>
+        <p>SWITCHER lets you to filter through thousands of games and find the ones you love at unbeatable prices!</p>
+        <% end %>
       </div>
 
-      <div class="banner-bot">
-        <div class=active-users>
-          <p>Most active users!</p>
-        </div>
-
-        <div class="user-cards">
-          <%= render "shared/user_card" %>
-          <%= render "shared/user_card" %>
-          <%= render "shared/user_card" %>
-          <%= render "shared/user_card" %>
-        </div>
-      </div>
-
+      <%= render "shared/users_list" %>
     </div>
 
   </div>

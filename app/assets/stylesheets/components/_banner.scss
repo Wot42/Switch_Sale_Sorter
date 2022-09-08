@@ -19,9 +19,6 @@
   border-style: double none double none;
 }
 
-// .banner-picy{
-//   background-image: linear-gradient(rgba(255, 255, 255, 0),rgba(0,0,0,0.7)),url("https://i.pinimg.com/564x/55/83/b1/5583b19cc2b717b96b19c2997579bb03.jpg");
-//   align-items: center;
 
 .user-cards {
   display: grid;
@@ -32,32 +29,28 @@
   display: flex;
   flex-direction: column;
 }
-// .active-users {
-//   width: auto;
-//   display: flex;
-// }
+
 
 .r-color {
   width: 10%;
   height: 85vh;
-  // border: 2px solid white;
   border-radius: 0 40px 40px 0;
   background-color: #FE5747;
-  position: sticky;
+  position: sticky; top: 15vh;
 }
 
 .l-color {
   width: 10%;
   height: 85vh;
-  // border: 2px solid white;
   border-radius: 40px 0 0 40px;
   background-color: #2E939B;
-  position: sticky;
+  position: sticky; top: 15vh;
 }
 
 .banner-info {
   font-family: 'Silkscreen', cursive;
   font-weight: 900;
+  color: white;
 }
 
 .banner h1 {
@@ -79,7 +72,8 @@
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 17px;
+  margin-top: 10px;
   color: rgb(255, 255, 255);
   opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
