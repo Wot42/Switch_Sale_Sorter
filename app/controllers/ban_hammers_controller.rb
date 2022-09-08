@@ -1,8 +1,9 @@
 class BanHammersController < ApplicationController
 
   def create
-    @ban_hammer = BanHammer.new(ban_hammer_params)
+    @ban_hammer = BanHammer.new()
     @ban_hammer.user = current_user
+    @ban_hammer.game = Game.find(params[:id])
 
     if @ban_hammer.save
       redirect_to user_path(current_user)
