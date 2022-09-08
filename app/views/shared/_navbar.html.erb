@@ -6,26 +6,58 @@
         <%= image_tag "https://see.fontimg.com/api/renderfont4/1G9Be/eyJyIjoiZnMiLCJoIjo1MywidyI6MTAwMCwiZnMiOjUzLCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzM1M0Q0QiIsInQiOjF9/U1dJVENIRVI/snes-italic.png", class:"nav-title" %>
       <% end %>
     </div>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-signlog" >
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Shop", "#", class: "sign-log" %>
+        <div class="dropdown">
+          <li class="nav-item" data-bs-toggle="dropdown"  class="btn dropdown-toggle d-flex align-items-center" id="dropdownMenuButton1" aria-expanded="false" >
+            <%= link_to "Filter", "#", class: "sign-log"%>
           </li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Adventure</a></li>
+              <li><a class="dropdown-item" href="#">Fighting</a></li>
+              <li><a class="dropdown-item" href="#">Health & Fitness</a></li>
+              <li><a class="dropdown-item" href="#">Music</a></li>
+              <li><a class="dropdown-item" href="#">Party</a></li>
+              <li><a class="dropdown-item" href="#">Platformer</a></li>
+              <li><a class="dropdown-item" href="#">Puzzle</a></li>
+              <li><a class="dropdown-item" href="#">Racing</a></li>
+              <li><a class="dropdown-item" href="#">RPG</a></li>
+              <li><a class="dropdown-item" href="#">Shooter</a></li>
+              <li><a class="dropdown-item" href="#">Simulation</a></li>
+              <li><a class="dropdown-item" href="#">Sports</a></li>
+              <li><a class="dropdown-item" href="#">Strategy</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+          <li class="nav-item" data-bs-toggle="dropdown"  class="btn dropdown-toggle d-flex align-items-center" id="dropdownMenuButton1" aria-expanded="false">
+            <%= link_to "Sort By", "#", class: "sign-log" %>
+          </li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Relevance</a></li>
+              <li><a class="dropdown-item" href="#">Popularity</a></li>
+              <li><a class="dropdown-item" href="#">Discount(%)</a></li>
+              <li><a class="dropdown-item" href="#">Price(Lowest)</a></li>
+              <li><a class="dropdown-item" href="#">Price(Highest)</a></li>
+              <li><a class="dropdown-item" href="#">Title(A-Z)</a></li>
+              <li><a class="dropdown-item" href="#">Title(Z-A)</a></li>
+            </ul>
+        </div>
           <li class="nav-item">
-            <%= link_to "Basket", "#", class: "sign-log" %>
+            <%= link_to "Undo", "#", class: "sign-log" %>
           </li>
           <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "sign-log" %>
           </li>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Catalogue", "#", class: "dropdown-item" %>
-              <%= link_to "My Profile", "#", class: "dropdown-item" %>
+              <%= link_to "Filter", "#", class: "dropdown" %>
+              <%= link_to "Sort By", "#", class: "dropdown2" %>
+              <%= link_to "Undo", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
