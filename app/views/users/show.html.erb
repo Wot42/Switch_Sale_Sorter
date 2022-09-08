@@ -1,11 +1,11 @@
 <div>
 <h1><%= @user[:user_name] %></h1>
 
-
   <div class="user-cards">
     <% @games.each do |game| %>
     <%= render "shared/card_base", game: game  %>
 
     <% end %>
   </div>
+  
 </div>
