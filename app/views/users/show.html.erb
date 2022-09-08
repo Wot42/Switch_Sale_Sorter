@@ -1,10 +1,11 @@
+<div>
 <h1><%= @user[:user_name] %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
 
+  <div class="user-cards">
+    <% @games.each do |game| %>
+    <%= render "shared/card_base", game: game  %>
 
-<div class="d-flex flex-wrap">
-<% @games.each do |game| %>
- <%= render "shared/card_base", game: game  %>
-
-<% end %>
+    <% end %>
+  </div>
+  
 </div>

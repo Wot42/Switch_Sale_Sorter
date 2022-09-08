@@ -22,7 +22,7 @@
 
 .user-cards {
   display: grid;
-  grid-gap: 70px;
+  grid-gap: 20px;
 }
 
 .banner-bot {
@@ -35,7 +35,7 @@
   width: 10%;
   height: 85vh;
   border-radius: 0 40px 40px 0;
-  background-color: #FE5747;
+  background-color: $r-color;
   position: sticky; top: 15vh;
   background: linear-gradient(0deg, rgba(126,24,24,1) 0%, rgba(254,87,71,1) 100%);
 }
@@ -44,7 +44,7 @@
   width: 10%;
   height: 85vh;
   border-radius: 40px 0 0 40px;
-  background-color: #2E939B;
+  background-color: $l-color;
   position: sticky; top: 15vh;
   background: linear-gradient(0deg, rgba(24,112,133,1) 35%, rgba(46,147,155,1) 59%);
 }
