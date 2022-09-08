@@ -1,5 +1,5 @@
-
 <div class="card">
+
   <%# <%= link_to game_path(@game) do %>
     <img src =<%= @game.pic %> class="card-img-top">
 
@@ -19,4 +19,24 @@
         <%= link_to "Select", "#", class: "text-decoration-none btn"%>
     </div>
   </div>
+</div>
+
+<br>
+
+<div class="fullclick">
+  <li>
+    <%# <%= link_to game_path(@game) do %>
+    <img src =<%= @game.pic %> class="card-img-top">
+    <h4 class = card-title ><%= @game.title %></h4>
+
+    <div class="w-100 d-flex justify-content-between">
+        <p class="card-text" style="font-weight: 650">Price: £<%= @game.price %></p>
+        <p class="card-text" style="font-weight: 650">Sale Price £<%= @game.sale_price %></p>
+      </div>
+
+    <p>
+      Description Description Description Description Description Description
+    </p>
+    <a href="dogs.html" class="main"></a>
+  </li>
 </div>
