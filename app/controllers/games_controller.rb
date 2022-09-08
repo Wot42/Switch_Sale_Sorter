@@ -75,7 +75,7 @@ class GamesController < ApplicationController
     change_list = []
 
     curent_games.each do |entry|
-    # entry = Game.find(3) #for testing
+      # entry = Game.find(3) #for testing
       if entry["active_sale"] == true
         if entry["sale_start"] == nil
           url_price = "https://api.ec.nintendo.com/v1/price?country=GB&lang=en&ids=#{entry[:api_id]}"
