@@ -2,8 +2,9 @@
 <p>Find me in app/views/users/show.html.erb</p>
 
 
-
+<div class="d-flex flex-wrap">
 <% @games.each do |game| %>
  <%= render "shared/card_base", game: game  %>
 
 <% end %>
+</div>
