@@ -1,23 +1,42 @@
-
-<!-- <%= render :partial => 'card_base', locals: { game: @game,  } %>  -->
-
 <div class="card">
-  <%= link_to game_path(game) do %>
-    <img src =<%= game.pic %> class="card-img-top">
-  <% end %>
+
+  <%# <%= link_to game_path(@game) do %>
+    <img src =<%= @game.pic %> class="card-img-top">
+
   <div class="card-body d-flex w-100 justify-content-between flex-column">
     <div class="w-100 d-flex">
-      <h5 class="card-title mb-auto"><%= game.title %></h5>
+      <h5 class="card-title mb-auto" style="font-weight: 1000"><%= @game.title %></h5>
     </div>
-    <br>
     <div class="w-100 d-flex flex-column">
       <div class="w-100 d-flex justify-content-between">
-        <p class="card-text"><%= game.price %></p>
-        <p class="card-text">£<%= game.sale_price %></p>
+        <p class="card-text" style="font-weight: 650">Price: £<%= @game.price %></p>
+        <p class="card-text" style="font-weight: 650">Sale Price £<%= @game.sale_price %></p>
       </div>
-      <div class="w-100 d-flex justify-content-around">
-        <%= link_to "Select", game_path(game), class: "text-decoration-none btn" %>
+        <p class="card-text-description">Description Description Description Description Description Description</p>
+      <div>
       </div>
+      <%# <div class="w-100 d-flex justify-content-around">
+        <%= link_to "Select", "#", class: "text-decoration-none btn"%>
     </div>
   </div>
+</div>
+
+<br>
+
+<div class="fullclick">
+  <li>
+    <%# <%= link_to game_path(@game) do %>
+    <img src =<%= @game.pic %> class="card-img-top">
+    <h4 class = card-title ><%= @game.title %></h4>
+
+    <div class="w-100 d-flex justify-content-between">
+        <p class="card-text" style="font-weight: 650">Price: £<%= @game.price %></p>
+        <p class="card-text" style="font-weight: 650">Sale Price £<%= @game.sale_price %></p>
+      </div>
+
+    <p>
+      Description Description Description Description Description Description
+    </p>
+    <a href="dogs.html" class="main"></a>
+  </li>
 </div>
