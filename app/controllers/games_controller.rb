@@ -4,8 +4,9 @@ require 'date'
 
 class GamesController < ApplicationController
   def show
-    @games = Game.all
-    @game=@games[5]
+    # to be replaced
+    @games = Game.all.sort_by(&:sale_price)
+    @game = @games[5]
   end
 
   def update_all

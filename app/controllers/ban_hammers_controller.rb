@@ -1,29 +1,29 @@
 class BanHammersController < ApplicationController
 
   def create
-    @BanHammer = BanHammer.new(ban_hammer_params)
-    @BanHammer.user = current_user
+    @ban_hammer = BanHammer.new(ban_hammer_params)
+    @ban_hammer.user = current_user
 
-    if @BanHammer.save
-      redirect_to shop_path(current_user)
+    if @ban_hammer.save
+      redirect_to user_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    @BanHammer = BanHammer.find(params[:id])
-    if @BanHammer.update(BanHammer_params)
-      redirect_to BanHammer_path(@BanHammer)
+    @ban_hammer = BanHammer.find(params[:id])
+    if @ban_hammer.update(BanHammer_params)
+      redirect_to BanHammer_path(@ban_hammer)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @BanHammer = BanHammer.find(params[:id])
-    @BanHammer.destroy
-    redirect_to shop_path(@BanHammer.user), status: :see_other
+    @ban_hammer = BanHammer.find(params[:id])
+    @ban_hammer.destroy
+    redirect_to baned_path(@ban_hammer.user), status: :see_other
   end
 
   private

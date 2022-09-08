@@ -1,11 +1,11 @@
 <h1>Games#show</h1>
 <p>Find me in app/views/games/show.html.erb</p>
-<%= render "shared/search_bar" %>
+
  <%= render "shared/card_base" %>
 
 <ol>
 <%= @games[0] %>
 <% @games.each do |game| %>
-<li><%= game.title %></li>
+<li><%= game.title %> <%= game.price %></li>
 <% end %>
 </ol>
