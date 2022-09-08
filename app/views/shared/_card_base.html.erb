@@ -1,37 +1,13 @@
-<div class="card">
-
-  <%# <%= link_to game_path(@game) do %>
-    <img src =<%= @game.pic %> class="card-img-top">
-
-  <div class="card-body d-flex w-100 justify-content-between flex-column">
-    <div class="w-100 d-flex">
-      <h5 class="card-title mb-auto" style="font-weight: 1000"><%= @game.title %></h5>
-    </div>
-    <div class="w-100 d-flex flex-column">
-      <div class="w-100 d-flex justify-content-between">
-        <p class="card-text" style="font-weight: 650">Price: £<%= @game.price %></p>
-        <p class="card-text" style="font-weight: 650">Sale Price £<%= @game.sale_price %></p>
-      </div>
-        <p class="card-text-description">Description Description Description Description Description Description</p>
-      <div>
-      </div>
-      <%# <div class="w-100 d-flex justify-content-around">
-        <%= link_to "Select", "#", class: "text-decoration-none btn"%>
-    </div>
-  </div>
-</div>
-
-<br>
 
 <div class="fullclick">
   <li>
-    <%# <%= link_to game_path(@game) do %>
-    <img src =<%= @game.pic %> class="card-img-top">
-    <h4 class = card-title ><%= @game.title %></h4>
+    <%= link_to game_path(game) do
+    <img src =<%= game.pic %> class="card-img-top">
+    <h4 class = card-title ><%= game.title %></h4>
 
     <div class="w-100 d-flex justify-content-between">
-        <p class="card-text" style="font-weight: 650">Price: £<%= @game.price %></p>
-        <p class="card-text" style="font-weight: 650">Sale Price £<%= @game.sale_price %></p>
+        <p class="card-text" style="font-weight: 650">Price: £<%= game.price %></p>
+        <p class="card-text" style="font-weight: 650">Sale Price £<%= game.sale_price %></p>
       </div>
 
     <p>
