@@ -1,3 +1,11 @@
+.game-cards {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.game-cards-container {
+  position: relative;
+}
 
 .card-category {
   background-size: cover;
@@ -37,17 +45,9 @@
   align-self: center;
 }
 
-.card-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 0;
+.fullclick {
+  max-width: 350px;
+  max-height: 340px;
 }
 
 .card {
@@ -60,7 +60,17 @@
   justify-content: space-around;
   // font-weight: bolder;
   padding: 10px;
+  max-height: inherit;
+  transition: width .3s, height .3s;
+}
+
+.game-cards .fullclick:hover {
+  max-height: 650px;
   max-width: 400px;
+  position: fixed;
+  z-index: 3;
+  top: 170px;
+  right: 450px;
 }
 
 .card-body {

@@ -1,11 +1,14 @@
-<div>
-<h1><%= @user[:user_name] %></h1>
+<div class="game-cards-container">
 
-  <div class="user-cards">
+  <div class="d-flex justify-content-center m-3">
+    <h1 class="text-white"><%= @user[:user_name] %></h1>
+  </div>
+
+  <div class="game-cards">
     <% @games.each do |game| %>
     <%= render "shared/card_base", game: game  %>
 
     <% end %>
   </div>
-  
+
 </div>
