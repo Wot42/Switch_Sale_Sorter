@@ -62,15 +62,29 @@
   padding: 10px;
   max-height: inherit;
   transition: width .3s, height .3s;
+  background: rgb(105,102,102);
+  background: radial-gradient(circle, rgba(105,102,102,1) 26%, rgba(83,79,78,1) 78%);
 }
 
-.game-cards .fullclick:hover {
-  max-height: 650px;
-  max-width: 400px;
+.card h5 {
+  text-align: center;
+}
+
+.card a {
+  font-weight: 500;
+}
+
+.game-cards .fullclick:active {
+  max-height: 600px;
+  max-width: 500px;
   position: fixed;
   z-index: 3;
   top: 170px;
-  right: 450px;
+  right: 410px;
+
+& body {
+    opacity: 0.5;
+  }
 }
 
 .card-body {
