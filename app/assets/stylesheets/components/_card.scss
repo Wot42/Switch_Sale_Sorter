@@ -1,3 +1,11 @@
+.game-cards {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.game-cards-container {
+  position: relative;
+}
 
 .card-category {
   background-size: cover;
@@ -37,17 +45,9 @@
   align-self: center;
 }
 
-.card-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 0;
+.fullclick {
+  max-width: 350px;
+  max-height: 340px;
 }
 
 .card {
@@ -60,7 +60,31 @@
   justify-content: space-around;
   // font-weight: bolder;
   padding: 10px;
-  max-width: 400px;
+  max-height: inherit;
+  transition: width .3s, height .3s;
+  background: rgb(105,102,102);
+  background: radial-gradient(circle, rgba(105,102,102,1) 26%, rgba(83,79,78,1) 78%);
+}
+
+.card h5 {
+  text-align: center;
+}
+
+.card a {
+  font-weight: 500;
+}
+
+.game-cards .fullclick:active {
+  max-height: 600px;
+  max-width: 500px;
+  position: fixed;
+  z-index: 3;
+  top: 170px;
+  right: 410px;
+
+& body {
+    opacity: 0.5;
+  }
 }
 
 .card-body {

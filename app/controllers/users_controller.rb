@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+
     if params.present?
       if params[:filter] == "action"
         games_all = Game.filtering(params[:filter])
@@ -42,17 +43,32 @@ class UsersController < ApplicationController
 
     end
 
-    @games = games_all
+
+    @games = []
+    games_all.each do |game|
+      show = true
+      hammers = game.BanHammers
+      hammers.each do |hammer|
+        show = false if hammer.user == @user
+      end
+      @games.push(game) if show
+    end
+
     @is_uers = @user == current_user
-    @filter = params[:filter]
-    @sort_by = params[:sortby]
+
   end
 
-  def baned
+  def banned
     @user = current_user
-    @banned = @user.games
-    @filter = params[:filter]
-    @sort_by = params[:sortby]
+
+    hammers = @user.BanHammers
+    @games = []
+    hammers.each do |hammer|
+      @games.push(hammer)
+    end
+
+    # yemis code here but modified
+
   end
 
   private
