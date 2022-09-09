@@ -39,15 +39,15 @@
             <%= link_to "Sort By", "#", class: "sign-log" %>
           </li>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Relevance</a></li>
-              <li><a class="dropdown-item" href="#">Popularity</a></li>
-              <li><a class="dropdown-item" href="#">Discount(%)</a></li>
-              <li><a class="dropdown-item" href="#">Price(Lowest)</a></li>
-              <li><a class="dropdown-item" href="#">Price(Highest)</a></li>
-              <li><a class="dropdown-item" href="#">Title(A-Z)</a></li>
-              <li><a class="dropdown-item" href="#">Title(Z-A)</a></li>
+              <li><%= link_to "Sale Price Highest", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Sale Price Lowest", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Recently Added To Sales", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Price(Lowest)", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Title(A-Z)", user_path(current_user, sort: "title ASC"), class: "dropdown-item" %></li>
+              <li><%= link_to "Title(Z-A)", user_path(current_user, sort: "title ASC"), class: "dropdown-item" %></li>
             </ul>
         </div>
+
           <li class="nav-item">
             <%= link_to "Undo", "#", class: "sign-log" %>
           </li>
