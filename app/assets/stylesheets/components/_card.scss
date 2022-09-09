@@ -74,18 +74,18 @@
   font-weight: 500;
 }
 
-.game-cards .fullclick:active {
-  max-height: 600px;
-  max-width: 500px;
-  position: fixed;
-  z-index: 3;
-  top: 170px;
-  right: 410px;
+// .game-cards .fullclick:active {
+//   max-height: 600px;
+//   max-width: 500px;
+//   position: fixed;
+//   z-index: 3;
+//   top: 170px;
+//   right: 410px;
 
-& body {
-    opacity: 0.5;
-  }
-}
+// & body {
+//     opacity: 0.5;
+//   }
+// }
 
 .card-button {
   color: $nint-red;
