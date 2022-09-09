@@ -4,9 +4,9 @@
   </div>
 
   <div class="user-cards">
-    <%= render "shared/user_card" %>
-    <%= render "shared/user_card" %>
-    <%= render "shared/user_card" %>
-    <%= render "shared/user_card" %>
+    <%= render "shared/user_card", user: User.all.sample%>
+    <%= render "shared/user_card", user: User.all.sample%>
+    <%= render "shared/user_card", user: User.all.sample%>
+    <%= render "shared/user_card", user: User.all.sample%>
   </div>
 </div>

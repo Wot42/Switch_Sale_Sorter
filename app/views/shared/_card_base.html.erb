@@ -1,5 +1,9 @@
 
-<div class="cards">
+<div class="fullclick">
+  <div class="card">
+
+    <img src =<%= game.pic %> class="card-img-top">
+      <h5 class="card-title" style="font-weight: 1000"><%= game.title %></h5>
 
   <div class="fullclick">
     <li>
@@ -12,17 +16,13 @@
           <p class="card-text" style="font-weight: 650">Sale Price £<%= game.sale_price %></p>
         </div>
 
-        <p class="card-tagline"><%= game.tagline %> </p>
 
-      <a href="dogs.html" class="main"></a>
 
-      <div class="w-100 d-flex justify-content-between">
-          <button type="button" class="btn btn-danger">Go to Store<a href="https://www.google.com/maps"></a></button>
-          <button type="button" class="btn btn-danger">Bun this<a href="https://www.google.com/maps"></a></button>
-        </div>
 
-      <%# <% end %>
-    </li>
+    <div class="w-100 d-flex justify-content-between">
+        <a href=<%="https://www.nintendo.co.uk#{game.url}"%>><button type="button" class="btn btn-danger">Go to Store</button></a>
+        <%= link_to "Bun this", ban_path(game), class: "btn btn-danger", data: {'turbo-method' => :post} %>
+      </div>
+
   </div>
-
 </div>

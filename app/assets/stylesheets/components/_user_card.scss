@@ -2,17 +2,17 @@
   overflow: hidden;
   color: $light-font;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 105px;
+  height: 160px;
   width: 150px;
   border-radius: 10px;
   transition: width .5s, height .5s;
 }
 
 .user-card:hover {
-  height: 120px;
+  height: 180px;
   width: 180px;
-& h2 {
-    font-size: 20px;
+& p {
+    font-size: 28px;
     opacity: 1;
   }
 }
@@ -23,15 +23,17 @@
 }
 
 .right-color-card {
-  background-color: #FE5747;
+  background-color: $r-color;
   width: 10%;
   border-radius: 0 10px 10px 0;
+  background: linear-gradient(0deg, rgba(126,24,24,1) 0%, rgba(254,87,71,1) 100%);
 }
 
 .left-color-card {
-  background-color: #2E939B;
+  background-color: $l-color;
   width: 10%;
   border-radius: 10px 0 0 10px;
+  background: linear-gradient(0deg, rgba(24,112,133,1) 35%, rgba(46,147,155,1) 59%);
 }
 
 .avatar-container-card {
@@ -59,8 +61,13 @@ left: -9px;
 
 }
 
-.user-card h2 {
-  font-size: 12px;
+.user-card p {
+  font-size: larger;
   font-weight: bold;
   margin: 0;
+  color: $light-font;
+}
+
+.user-card a {
+  text-decoration: none;
 }

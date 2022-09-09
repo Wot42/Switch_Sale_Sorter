@@ -1,9 +1,14 @@
-<h1><%= @user[:user_name] %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="game-cards-container">
 
+  <div class="d-flex justify-content-center m-3">
+    <h1 class="text-white"><%= @user[:user_name] %></h1>
+  </div>
 
+  <div class="game-cards">
+    <% @games.each do |game| %>
+    <%= render "shared/card_base", game: game  %>
 
-<% @games.each do |game| %>
- <%= render "shared/card_base", game: game  %>
+    <% end %>
+  </div>
 
-<% end %>
+</div>
