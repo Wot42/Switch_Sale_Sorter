@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-
+    games_all = Game.all
     if params.present?
       if params[:filter] == "action"
         games_all = Game.filtering(params[:filter])
@@ -32,9 +32,19 @@ class UsersController < ApplicationController
       elsif params[:filter] == "strategy"
         games_all = Game.filtering(params[:filter])
       elsif params[:sort] == "lowest"
-        games_all = Game.all.order("price, ASC")
-      elsif params[:sort] == "Title(A-Z)"
-        games_all = Game.all.order("title, ASC")
+        games_all = Game.all.order("price ASC")
+      elsif params[:sort] == "highest"
+        games_all = Game.all.order("price DESC")
+      elsif params[:sort] == "title ASC"
+        games_all = Game.all.order("games.title ASC")
+      elsif params[:sort] == "title DESC"
+        games_all = Game.all.order("games.title DESC")
+      elsif params[:sort] == "biggestdiscount"
+        games_all = Game.all.order("discount_percentage DESC")
+      elsif params[:sort] == "title DESC"
+        games_all = Game.all.order("games.title DESC")
+      elsif params[:sort] == "title DESC"
+        games_all = Game.all.order("games.title DESC")
       else
         games_all = Game.all
       end
