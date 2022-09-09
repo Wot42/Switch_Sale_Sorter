@@ -87,6 +87,22 @@
   }
 }
 
+.card-button {
+  color: $nint-red;
+  border: 2px solid $nint-red;
+  padding: 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 100;
+  font-family: $nav-font;
+}
+
+.card-button:hover {
+  color: white;
+  border: 2px solid white;
+  background-color: $nint-red;
+}
+
 .card-body {
   padding: 10px 0px;
 }
