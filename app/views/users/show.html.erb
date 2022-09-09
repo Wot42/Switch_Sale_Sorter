@@ -6,7 +6,7 @@
 
   <div class="game-cards">
     <% @games.each do |game| %>
-    <%= render "shared/card_base", game: game  %>
+    <%= render "shared/card_base", game: game, ban: false, active: @is_uers  %>
 
     <% end %>
   </div>

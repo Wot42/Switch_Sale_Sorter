@@ -10,13 +10,17 @@
 
     <div class="w-100 d-flex justify-content-between">
         <a href=<%="https://www.nintendo.co.uk#{game.url}"%>><button type="button" class="card-button">Go to Store</button></a>
+         <% if active %>
         <%= link_to "Bun this", ban_path(game), class: 'card-button', data: {'turbo-method' => :post} %>
+        <% end %>
+        <% if ban %>
         <% hammer_id = 0 %>
         <% hammers = game.BanHammers %>
         <% hammers.each do |hammer| %>
         <% hammer_id = hammer.id if hammer.user == @user %>
         <% end %>
         <%= link_to "Restore", restore_path(hammer_id), class: 'card-button', data: {'turbo-method' => :delete} %>
+        <% end %>
     </div>
   </div>
 </div>

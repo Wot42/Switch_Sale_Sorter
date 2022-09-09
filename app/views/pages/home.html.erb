@@ -9,7 +9,7 @@
     <div class="mt-5">
       <div class="game-cards">
         <% @games.each do |game| %>
-        <%= render "shared/card_base", game: game  %>
+        <%= render "shared/card_base", game: game, ban: false, active: true  %>
         <% end %>
       </div>
     </div>
