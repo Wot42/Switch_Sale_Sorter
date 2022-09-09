@@ -1,0 +1,15 @@
+<div class="dropdown">
+          <li class="nav-item" data-bs-toggle="dropdown"  class="btn dropdown-toggle d-flex align-items-center" id="dropdownMenuButton1" aria-expanded="false">
+            <%= link_to "Sort By", "#", class: "sign-log" %>
+          </li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Relevance</a></li>
+              <li><a class="dropdown-item" href="#">Popularity</a></li>
+              <li><%= link_to "Discount(%)", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Price(Lowest)", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Title(A-Z)", user_path(current_user, sort: "title ASC"), class: "dropdown-item" %></li>
+              <li><a class="dropdown-item" href="#">Price(Highest)</a></li>
+              <li><a class="dropdown-item" href="#">Title(A-Z)    </a></li>
+              <li><a class="dropdown-item" href="#">Title(Z-A)</a></li>
+            </ul>
+        </div>

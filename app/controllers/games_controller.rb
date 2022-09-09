@@ -83,10 +83,12 @@ class GamesController < ApplicationController
     return hash
   end
 
+
   def update_dates
     Game.all.each do |entry|
       if entry["active_sale"]
         if entry["sale_start"].nil?
+
           url_price = "https://api.ec.nintendo.com/v1/price?country=GB&lang=en&ids=#{entry[:api_id]}"
           price_serialized = URI.open(url_price).read
           price_api = JSON.parse(price_serialized, symbolize_names: true)
