@@ -3,28 +3,35 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     games_all = Game.all.sort_by(&:sale_price)
-    @games=[]
+
+    # yemis code here
+
+
+    @games = []
     games_all.each do |game|
       show = true
-      # if  defined?(game.ban_hamers)
-       hammers = game.BanHammers
-       hammers.each do |hammer|
-          show = false if hammer.user == @user
-        end
-      # end
+      hammers = game.BanHammers
+      hammers.each do |hammer|
+        show = false if hammer.user == @user
+      end
       @games.push(game) if show
     end
 
     @is_uers = @user == current_user
-    @filter = params[:filter]
-    @sort_by = params[:sortby]
+
   end
 
-  def baned
+  def banned
     @user = current_user
-    @banned = @user.games
-    @filter = params[:filter]
-    @sort_by = params[:sortby]
+
+    hammers = @user.BanHammers
+    @games = []
+    hammers.each do |hammer|
+      @games.push(hammer)
+    end
+
+    # yemis code here but modified
+
   end
 
   private
