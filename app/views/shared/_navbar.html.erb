@@ -17,20 +17,21 @@
             <%= link_to "Filter", "#", class: "sign-log"%>
           </li>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Adventure</a></li>
-              <li><a class="dropdown-item" href="#">Fighting</a></li>
-              <li><a class="dropdown-item" href="#">Health & Fitness</a></li>
-              <li><a class="dropdown-item" href="#">Music</a></li>
-              <li><a class="dropdown-item" href="#">Party</a></li>
-              <li><a class="dropdown-item" href="#">Platformer</a></li>
-              <li><a class="dropdown-item" href="#">Puzzle</a></li>
-              <li><a class="dropdown-item" href="#">Racing</a></li>
-              <li><a class="dropdown-item" href="#">RPG</a></li>
-              <li><a class="dropdown-item" href="#">Shooter</a></li>
-              <li><a class="dropdown-item" href="#">Simulation</a></li>
-              <li><a class="dropdown-item" href="#">Sports</a></li>
-              <li><a class="dropdown-item" href="#">Strategy</a></li>
+
+              <li><%= link_to "Action", user_path(current_user, filter: "action"), class: "dropdown-item" %></li>
+              <li><%= link_to "Adventure", user_path(current_user, filter: "adventure"), class: "dropdown-item" %></li>
+              <li><%= link_to "Fighting", user_path(current_user, filter: "fighting"), class: "dropdown-item" %></li>
+              <li><%= link_to "Health & Fitness", user_path(current_user, filter: "Health & Fitness"), class: "dropdown-item" %></li>
+              <li><%= link_to "Music", user_path(current_user, filter: "music"), class: "dropdown-item" %></li>
+              <li><%= link_to "Party", user_path(current_user, filter: "party"), class: "dropdown-item" %></li>
+              <li><%= link_to "Platformer", user_path(current_user, filter: "platformer"), class: "dropdown-item" %></li>
+              <li><%= link_to "Puzzle", user_path(current_user, filter: "puzzle"), class: "dropdown-item" %></li>
+              <li><%= link_to "Racing", user_path(current_user, filter: "racing"), class: "dropdown-item" %></li>
+              <li><%= link_to "RPG", user_path(current_user, filter: "rpg"), class: "dropdown-item" %></li>
+              <li><%= link_to "Shooter", user_path(current_user, filter: "shooter"), class: "dropdown-item" %></li>
+              <li><%= link_to "Simulation", user_path(current_user, filter: "simulation"), class: "dropdown-item" %></li>
+              <li><%= link_to "Sports", user_path(current_user, filter: "sports"), class: "dropdown-item" %></li>
+              <li><%= link_to "Strategy", user_path(current_user, filter: "strategy"), class: "dropdown-item" %></li>
             </ul>
         </div>
         <div class="dropdown">
@@ -38,17 +39,17 @@
             <%= link_to "Sort By", "#", class: "sign-log" %>
           </li>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Relevance</a></li>
-              <li><a class="dropdown-item" href="#">Popularity</a></li>
-              <li><a class="dropdown-item" href="#">Discount(%)</a></li>
-              <li><a class="dropdown-item" href="#">Price(Lowest)</a></li>
-              <li><a class="dropdown-item" href="#">Price(Highest)</a></li>
-              <li><a class="dropdown-item" href="#">Title(A-Z)</a></li>
-              <li><a class="dropdown-item" href="#">Title(Z-A)</a></li>
+              <li><%= link_to "Sale Price Highest", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Sale Price Lowest", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Recently Added To Sales", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Price(Lowest)", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Title(A-Z)", user_path(current_user, sort: "title ASC"), class: "dropdown-item" %></li>
+              <li><%= link_to "Title(Z-A)", user_path(current_user, sort: "title ASC"), class: "dropdown-item" %></li>
             </ul>
         </div>
+
           <li class="nav-item">
-            <%= link_to "Undo", "#", class: "sign-log" %>
+            <%= link_to "Undo", banned_path, class: "sign-log" %>
           </li>
           <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "sign-log" %>
@@ -57,7 +58,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Filter", "#", class: "dropdown" %>
               <%= link_to "Sort By", "#", class: "dropdown2" %>
-              <%= link_to "Undo", "#", class: "dropdown-item" %>
+              <%= link_to "Undo", banned_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

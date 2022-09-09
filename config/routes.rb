@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :users, only: [:show]
-  get "/users/:id/baned", to: "users#baned", as: "baned"
+  get "/banned", to: "users#banned", as: "banned"
   get "/games/updateall", to: "games#update_all"
 
 

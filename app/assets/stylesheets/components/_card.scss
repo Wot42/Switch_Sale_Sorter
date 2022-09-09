@@ -47,7 +47,7 @@
 
 .fullclick {
   max-width: 350px;
-  max-height: 340px;
+  max-height: 320px;
 }
 
 .card {
@@ -62,15 +62,45 @@
   padding: 10px;
   max-height: inherit;
   transition: width .3s, height .3s;
+  background: rgb(105,102,102);
+  background: radial-gradient(circle, rgba(105,102,102,1) 26%, rgba(83,79,78,1) 78%);
 }
 
-.game-cards .fullclick:hover {
-  max-height: 650px;
-  max-width: 400px;
-  position: fixed;
-  z-index: 3;
-  top: 170px;
-  right: 450px;
+.card h5 {
+  text-align: center;
+}
+
+.card a {
+  font-weight: 500;
+}
+
+// .game-cards .fullclick:active {
+//   max-height: 600px;
+//   max-width: 500px;
+//   position: fixed;
+//   z-index: 3;
+//   top: 170px;
+//   right: 410px;
+
+// & body {
+//     opacity: 0.5;
+//   }
+// }
+
+.card-button {
+  color: $nint-red;
+  border: 2px solid $nint-red;
+  padding: 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 100;
+  font-family: $nav-font;
+}
+
+.card-button:hover {
+  color: white;
+  border: 2px solid white;
+  background-color: $nint-red;
 }
 
 .card-body {
