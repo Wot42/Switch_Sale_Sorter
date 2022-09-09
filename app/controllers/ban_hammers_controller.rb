@@ -24,7 +24,7 @@ class BanHammersController < ApplicationController
   def destroy
     @ban_hammer = BanHammer.find(params[:id])
     @ban_hammer.destroy
-    redirect_to baned_path(@ban_hammer.user), status: :see_other
+    redirect_to banned_path(@ban_hammer.user), status: :see_other
   end
 
   private
