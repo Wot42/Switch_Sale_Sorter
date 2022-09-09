@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   def show
     # to be replaced
     games_all = Game.all.sort_by(&:sale_price)
-    @games=[]
+    @games = []
     games_all.each do |game|
       show = true
       games.banhamers.each do |hammer|
@@ -19,16 +19,19 @@ class GamesController < ApplicationController
   end
 
   def update_all
-    # DOSENT WORK YET
+    # NEEDS TESTING
     curent_games = Game.all
     curent_games.each do |entry|
-      if (entry[:sale_end] <=> Date.today) == -1
+      if ((entry[:sale_end] <=> Date.today) == -1)
+
         entry[:sale_start] = nil
         entry[:sale_end] = nil
         entry[:active_sale] = false
+        entry.save
 
       end
     end
+    curent_games = Game.all
      # WORKS FROM HERE
 
 
@@ -57,7 +60,7 @@ class GamesController < ApplicationController
 
     end
 
-    update_dates(curent_games)
+    update_dates()
   end
 
   private
@@ -80,22 +83,22 @@ class GamesController < ApplicationController
     return hash
   end
 
-  def update_dates(curent_games)
-    change_list = []
-
-    curent_games.each do |entry|
-    # entry = Game.find(3) #for testing
-      if entry["active_sale"] == true
-        if entry["sale_start"] == nil
+  def update_dates
+    Game.all.each do |entry|
+      if entry["active_sale"]
+        if entry["sale_start"].nil?
           url_price = "https://api.ec.nintendo.com/v1/price?country=GB&lang=en&ids=#{entry[:api_id]}"
           price_serialized = URI.open(url_price).read
           price_api = JSON.parse(price_serialized, symbolize_names: true)
-          new_start = Date.parse( price_api[:prices][0][:discount_price][:start_datetime][0,10] )
-          new_end = Date.parse( price_api[:prices][0][:discount_price][:end_datetime][0,10] )
-          entry.update({
-            sale_start: new_start,
-            sale_end: new_end
-          })
+
+          unless price_api[:prices][0][:discount_price].nil?
+            new_start = Date.parse(price_api[:prices][0][:discount_price][:start_datetime][0, 10])
+            new_end = Date.parse(price_api[:prices][0][:discount_price][:end_datetime][0, 10])
+            entry.update({
+              sale_start: new_start,
+              sale_end: new_end
+            })
+          end
         end
       end
     end
