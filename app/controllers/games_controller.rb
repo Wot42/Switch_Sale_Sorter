@@ -5,7 +5,16 @@ require 'date'
 class GamesController < ApplicationController
   def show
     # to be replaced
-    @games = Game.all.sort_by(&:sale_price)
+    games_all = Game.all.sort_by(&:sale_price)
+    @games=[]
+    games_all.each do |game|
+      show = true
+      games.banhamers.each do |hammer|
+        show = false if hammer.user == @user
+      end
+      @games.push(game) if show
+    end
+
     @game = @games[5]
   end
 
