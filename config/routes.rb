@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get "/users/:id/baned", to: "users#baned", as: "baned"
   get "/games/updateall", to: "games#update_all"
 
+
+  delete "bookings/:id", to: "ban_hammers#destroy", as: "restore"
+  post "/games/:id/banhammers", to: "ban_hammers#create", as: "ban"
+
 end
 
 # rails generate model Games title:string pic:string price:integer sale_price:integer genre:string api_id:string
