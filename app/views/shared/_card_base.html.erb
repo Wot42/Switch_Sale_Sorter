@@ -7,10 +7,16 @@
         <p class="card-text" style="font-weight: 650">Price: £<%= game.price %></p>
         <p class="card-text fw-bold text-uppercase" style="font-weight: 650">Sale Price £<%= game.sale_price %></p>
       </div>
-    
+
     <div class="w-100 d-flex justify-content-between">
         <a href=<%="https://www.nintendo.co.uk#{game.url}"%>><button type="button" class="card-button">Go to Store</button></a>
-        <%= link_to "Bun this", ban_path(game), class: 'btn btn-danger', data: {'turbo-method' => :post} %>
+        <%= link_to "Bun this", ban_path(game), class: 'card-button', data: {'turbo-method' => :post} %>
+        <% hammer_id = 0 %>
+        <% hammers = game.BanHammers %>
+        <% hammers.each do |hammer| %>
+        <% hammer_id = hammer.id if hammer.user == @user %>
+        <% end %>
+        <%= link_to "Restore", restore_path(hammer_id), class: 'card-button', data: {'turbo-method' => :delete} %>
     </div>
   </div>
 </div>

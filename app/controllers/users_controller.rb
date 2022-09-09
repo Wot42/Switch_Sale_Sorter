@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     hammers = @user.BanHammers
     @games = []
     hammers.each do |hammer|
-      @games.push(hammer)
+      @games.push(hammer.game)
     end
 
     # yemis code here but modified

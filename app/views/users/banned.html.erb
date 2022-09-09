@@ -1,2 +1,16 @@
-<h1>Users#banned</h1>
-<p>Find me in app/views/users/banned.html.erb</p>
+<div class="d-flex justify-content-between text-white m-4">
+  <h1>Games banned</h1>
+   <%= link_to "My Area", user_path(@user), class: "card-button" %>
+</div>
+
+<div>
+  <div class="game-cards">
+    <% @games.each do |game| %>
+    <%= render "shared/card_base", game: game  %>
+
+    <% end %>
+  </div>
+</div>
+
+<%# display banned games
+install button RESTORE %>
