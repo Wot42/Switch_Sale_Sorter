@@ -1,6 +1,6 @@
 .game-cards {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 40px;
   justify-items: center;
 }
 
@@ -83,17 +83,18 @@
 
 .card a {
   font-weight: 500;
+  font-size: small;
 }
 
 
 .card-button {
   color: $nint-red;
   background-color: white;
-  border: 2px solid $nint-red;
-  padding: 5px;
-  border-radius: 10px;
+  border: 0.2em solid $nint-red;
+  padding: 0.3vw;
+  border-radius: 0.6em;
   text-decoration: none;
-  font-weight: 100;
+  font-weight: 200;
   font-family: $nav-font;
 }
 
@@ -137,7 +138,7 @@
 .card-title {
   display: block;
   margin: 0px auto;
-  font-size: 1.4vw;
+  font-size: small;
   font-family: $nav-font;
   padding: 4px 0 4px 0;
   color: white;
