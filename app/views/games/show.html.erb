@@ -1,14 +1,16 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<h1 style="color: white"><%= @game.title%></h1>
+<% @description.each do |p| %>
 
- <%= render "shared/card_base" %>
+<p style="color: white"><%= p %></p>
 
-<ol>
-<%= @games[0] %>
-<% @games.each do |game| %>
-<li><%= game.title %> <%= game.price %></li>
 <% end %>
-</ol>
+
+<% @pics.each do |img| %>
+
+<img  src=<%= img %>>
 
 
- <%= render "shared/card_base", game: game %>
+
+<% end %>
+
+<p style="color: white"><%= @html_doc %></p>

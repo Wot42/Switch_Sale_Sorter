@@ -1,21 +1,30 @@
 require "json"
 require "open-uri"
 require 'date'
+require "nokogiri"
 
 class GamesController < ApplicationController
   def show
-    # to be replaced
-    games_all = Game.all.sort_by(&:sale_price)
-    @games = []
-    games_all.each do |game|
-      show = true
-      games.banhamers.each do |hammer|
-        show = false if hammer.user == @user
-      end
-      @games.push(game) if show
+    @game = Game.find(params[:id])
+    html_file = URI.open("https://www.nintendo.co.uk#{@game.url}").read
+    html_doc = Nokogiri::HTML(html_file)
+    @description = []
+    @pics = []
+    html_doc.search(".game-section-content .content p").each do |element1|
+      @description.push(element1.text.strip)
     end
 
-    @game = @games[5]
+
+    html_doc.search(".page-img img").each do |element1|
+      unless  element1.attribute(":alt") || element1.attribute("v-bind:alt")
+        pic_url = element1.attribute("data-xs").value.gsub("_TM_Standard", "")
+
+
+        @pics.push(pic_url)
+      end
+    end
+
+
   end
 
   def update_all

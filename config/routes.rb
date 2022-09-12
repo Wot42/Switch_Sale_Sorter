@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'games/show'
-  get 'users/show'
+  # get 'users/show'
   get 'users/baned'
   devise_for :users
   root to: "pages#home"
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   delete "bookings/:id", to: "ban_hammers#destroy", as: "restore"
   post "/games/:id/banhammers", to: "ban_hammers#create", as: "ban"
+  get "/games/:id", to: "games#show", as: "game"
 
 end
 
