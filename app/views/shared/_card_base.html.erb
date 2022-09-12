@@ -9,7 +9,7 @@
       </div>
 
     <div class="w-100 d-flex justify-content-between">
-        <a href=<%="https://www.nintendo.co.uk#{game.url}"%>><button type="button" class="card-button">Go to Store</button></a>
+        <%=link_to "Go to Store", "https://www.nintendo.co.uk#{game.url}", class: "card-button", target: :_blank %>
          <% if active %>
         <%= link_to "Bun this", ban_path(game), class: 'card-button', data: {'turbo-method' => :post} %>
         <% end %>
