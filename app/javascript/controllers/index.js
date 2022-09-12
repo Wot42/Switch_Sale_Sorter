@@ -4,5 +4,11 @@
 
 import { application } from "./application"
 
+import AjaxBanController from "./ajax_ban_controller"
+application.register("ajax-ban", AjaxBanController)
+
+import AjaxUndoController from "./ajax_undo_controller"
+application.register("ajax-undo", AjaxUndoController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

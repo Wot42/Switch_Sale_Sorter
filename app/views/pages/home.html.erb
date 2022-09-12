@@ -7,7 +7,7 @@
     </div>
     <div class="d-flex justify-content-center text-white"><h2>CATALOGUE</h2></div>
     <div class="mt-5">
-      <div class="game-cards">
+      <div class="game-cards" data-controller="ajax-ban">
         <% @games.each do |game| %>
         <%= render "shared/card_base", game: game, ban: false, active: true  %>
         <% end %>

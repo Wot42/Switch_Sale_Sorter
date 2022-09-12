@@ -30,6 +30,6 @@ class BanHammersController < ApplicationController
   private
 
   def BanHammer_params
-    params.require(:BanHammer).permit(:game_id)
+    params.require(:BanHammer).permit(:game_id, :user_id)
   end
 end
