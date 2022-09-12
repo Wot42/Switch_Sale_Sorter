@@ -4,48 +4,32 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    games_all = Game.all
     if params.present?
-      if params[:filter] == "action"
+
+      if params[:filter]
         games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "adventure"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "fighting"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "Health & Fitness"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "music"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "party"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "platformer"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "puzzle"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "racing"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "rpg"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "shooter"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "simulation"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "sports"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:filter] == "strategy"
-        games_all = Game.filtering(params[:filter])
-      elsif params[:sort] == "lowest"
-        games_all = Game.all.order("price, ASC")
-      elsif params[:sort] == "Title(A-Z)"
-        games_all = Game.all.order("title, ASC")
+        if params[:sort]
+          if params[:sort] == "highest"
+            games_all = Game.order("price DESC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
+          elsif params[:sort] == "title ASC"
+            games_all = Game.order("games.title ASC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
+          elsif params[:sort] == "title DESC"
+            games_all = Game.order("games.title DESC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
+          elsif params[:sort] == "lowest"
+            games_all = Game.order("price ASC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
+          elsif params[:sort] == "biggestdiscount"
+            games_all = Game.order("discount_percentage DESC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
+          elsif params[:sort] == "sale_start"
+            games_all = Game.order("sale_start DESC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
+          end
+        end
       else
         games_all = Game.all
       end
     else
       games_all = Game.all
-
     end
-
 
     @games = []
     games_all.each do |game|

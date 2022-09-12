@@ -39,15 +39,15 @@
             <%= link_to "Sort By", "#", class: "sign-log" %>
           </li>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><%= link_to "Sale Price Highest", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
-              <li><%= link_to "Sale Price Lowest", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
-              <li><%= link_to "Recently Added To Sales", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
-              <li><%= link_to "Price(Lowest)", user_path(current_user, sort: "lowest"), class: "dropdown-item" %></li>
-              <li><%= link_to "Title(A-Z)", user_path(current_user, sort: "title ASC"), class: "dropdown-item" %></li>
-              <li><%= link_to "Title(Z-A)", user_path(current_user, sort: "title ASC"), class: "dropdown-item" %></li>
+              <li><%= link_to "Sale Price Highest", user_path(current_user, filter: params[:filter], sort: "biggestdiscount"), class: "dropdown-item" %></li>
+              <li><%= link_to "Sale Price Lowest", user_path(current_user, filter: params[:filter], sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Recently Added To Sales", user_path(current_user, filter: params[:filter], sort: "sale_start"), class: "dropdown-item" %></li>
+              <li><%= link_to "Price(Lowest)", user_path(current_user, filter: params[:filter], sort: "lowest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Price(Highest)", user_path(current_user, filter: params[:filter], sort: "highest"), class: "dropdown-item" %></li>
+              <li><%= link_to "Title(A-Z)", user_path(current_user, filter: params[:filter], sort: "title ASC"), class: "dropdown-item" %></li>
+              <li><%= link_to "Title(Z-A)", user_path(current_user, filter: params[:filter], sort: "title DESC"), class: "dropdown-item" %></li>
             </ul>
         </div>
-
           <li class="nav-item">
             <%= link_to "Undo", banned_path, class: "sign-log" %>
           </li>
