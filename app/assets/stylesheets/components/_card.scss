@@ -1,6 +1,7 @@
 .game-cards {
   display: grid;
   grid-gap: 20px;
+  justify-items: center;
 }
 
 .game-cards-container {
@@ -46,25 +47,35 @@
 }
 
 .fullclick {
-  max-width: 350px;
-  max-height: 320px;
+  width: 350px;
+  height: 310px;
 }
 
 .card {
   background-size: cover;
   background-position: center;
-  border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: space-around;
   // font-weight: bolder;
   padding: 10px;
-  max-height: inherit;
-  transition: width .3s, height .3s;
-  background: rgb(105,102,102);
-  background: radial-gradient(circle, rgba(105,102,102,1) 26%, rgba(83,79,78,1) 78%);
+  height: inherit;
+  background: rgb(86,82,81);
+  background: radial-gradient(circle, rgba(86,82,81,1) 40%, rgba(125,114,111,1) 88%);
+  border-radius: 10px;
+  transition: 0.3s;
 }
+
+.card:hover {
+  box-shadow: -1px -1px 10px rgba(231, 225, 225, 0.856);
+  background: rgb(223, 53, 53);
+& .card-text {
+  color: white;
+  text-transform: uppercase;
+}
+}
+
 
 .card h5 {
   text-align: center;
@@ -74,21 +85,10 @@
   font-weight: 500;
 }
 
-// .game-cards .fullclick:active {
-//   max-height: 600px;
-//   max-width: 500px;
-//   position: fixed;
-//   z-index: 3;
-//   top: 170px;
-//   right: 410px;
-
-// & body {
-//     opacity: 0.5;
-//   }
-// }
 
 .card-button {
   color: $nint-red;
+  background-color: white;
   border: 2px solid $nint-red;
   padding: 5px;
   border-radius: 10px;
@@ -135,10 +135,12 @@
 }
 
 .card-title {
-  padding: 10px 10px 10px 10px;
-  font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
-  margin-left: -11px;
+  display: block;
+  margin: 0px auto;
+  font-size: 1.4vw;
+  font-family: $nav-font;
+  padding: 4px 0 4px 0;
+  color: white;
 }
 
 .card-tagline {
