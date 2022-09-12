@@ -14,3 +14,26 @@
 <% end %>
 
 <p style="color: white"><%= @html_doc %></p>
+
+
+<div class="w3-modal-content card-modal">
+
+  <div class="w3-container">
+    <span onclick="document.getElementById('id01').style.display='none'"
+    class="w3-button w3-display-topright">&times;</span>
+    <h2><%= game.title %></h2>
+  </div>
+
+  <div class="w3-container modal-pics">
+    <% @pics.each do |img| %>
+    <img  src=<%= img %>>
+    <% end %>
+  </div>
+
+  <div class= "w3-container modal-desc">
+    <% @description.each do |p| %>
+    <p style="color: white"><%= p %></p>
+    <% end %>
+  </div>
+
+</div>
