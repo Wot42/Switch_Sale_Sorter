@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+
+
   def show
     @user = User.find(params[:id])
 
@@ -64,7 +67,7 @@ class UsersController < ApplicationController
     hammers = @user.BanHammers
     @games = []
     hammers.each do |hammer|
-      @games.push(hammer)
+      @games.push(hammer.game)
     end
 
     # yemis code here but modified
