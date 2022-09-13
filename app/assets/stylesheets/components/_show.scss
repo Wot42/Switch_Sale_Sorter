@@ -2,15 +2,47 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-  height: 70vh;
+  height: 60vh;
   padding: 1.3vw;
+}
+
+
+.container-top {
+  display: flex;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+
+.ban-buttns {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.perm {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.until {
+  display: flex;
+  justify-content: center;
+}
+
+.own {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .game-title {
   display: flex;
   justify-content: center;
-  margin-top: 3vh;
-  margin-bottom: 2vh;
+  align-items: center;
+  width: 50%;
+  padding-right: 6.5vw;
+& h1 {
+  font-size: 3.5vw;
+}
 }
 
 

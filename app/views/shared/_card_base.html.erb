@@ -12,11 +12,10 @@
         <p class="card-text" style="font-weight: 650">Sale Price £<%= game.sale_price %></p>
       </div>
 
-    <div class="w-100 d-flex justify-content-between">
-        <%=link_to "Go to Store", "https://www.nintendo.co.uk#{game.url}", class: "card-button", target: :_blank %>
+    <div class="w-100 d-flex justify-content-center">
          <% if active %>
         <!--<%= link_to "Bun this", ban_path(game), class: 'card-button', data: {'turbo-method' => :post} %> -->
-        <div class = 'card-button' data-action="click->ajax-ban#postBanToRuby" data-user="<%=@user.id%>" data-game="<%=game.id%>">Bun this</div>
+        <div class = 'card-button' data-action="click->ajax-ban#postBanToRuby" data-user="<%=@user.id%>" data-game="<%=game.id%>">Delete this</div>
         <% end %>
         <% if ban %>
         <% hammer_id = 0 %>
