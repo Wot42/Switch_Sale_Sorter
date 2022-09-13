@@ -2,8 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @games = Game.all
-    # sort
+
 
     games_all = Game.all
     if params.present?
@@ -46,21 +45,6 @@ class PagesController < ApplicationController
     # filter
     @users = User.all
     @user = current_user
-    # @filter = params[:filter]
-    # @sort_by = params[:sortby]
-  end
-
-
-  def banned
-    @user = current_user
-
-    hammers = @user.BanHammers
-    @games = []
-    hammers.each do |hammer|
-      @games.push(hammer.game)
-    end
-
-    # yemis code here but modified
 
   end
 end

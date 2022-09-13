@@ -12,7 +12,7 @@
         <%=link_to "Go to Store", "https://www.nintendo.co.uk#{game.url}", class: "card-button", target: :_blank %>
          <% if active %>
         <!--<%= link_to "Bun this", ban_path(game), class: 'card-button', data: {'turbo-method' => :post} %> -->
-        <div class = 'card-button' data-action="click->ajax-ban#postBanToRuby" data-user="<%=@user.id%>" data-game="<%=game.id%>">Bun this</div>
+        <div class = 'card-button' data-action="click->ajax-ban#fullBanToRuby" data-user="<%=@user.id%>" data-game="<%=game.id%>">Bun this</div>
         <% end %>
         <% if ban %>
         <% hammer_id = 0 %>
