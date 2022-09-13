@@ -82,8 +82,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_084842) do
     t.datetime "remember_created_at"
     t.string "user_name"
     t.string "picture"
-    t.string "left_color", default: "blue"
-    t.string "right_color", default: "red"
+    t.string "left_color"
+    t.string "right_color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
