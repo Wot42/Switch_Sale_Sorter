@@ -1,39 +1,58 @@
-<h1 style="color: white"><%= @game.title%></h1>
-<% @description.each do |p| %>
+<div class="game-title">
+  <h1 style="color: white"><%= @game.title%></h1>
+</div>
 
-<p style="color: white"><%= p %></p>
+<div class="container-show">
 
-<% end %>
-
-<% @pics.each do |img| %>
-
-<img  src=<%= img %>>
-
-
-
-<% end %>
-
-<p style="color: white"><%= @html_doc %></p>
-
-
-<div class="w3-modal-content card-modal">
-
-  <div class="w3-container">
-    <span onclick="document.getElementById('id01').style.display='none'"
-    class="w3-button w3-display-topright">&times;</span>
-    <h2><%= game.title %></h2>
+  <div class="cont-desc">
+    <div class="scroller">
+      <div>
+        <% @description.each do |p| %>
+        <p style="color: white"><%= p %></p>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <div class="w3-container modal-pics">
+
+
+  <div id="carouselExampleControls" class="carousel slide w-75">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src=<%= @pics.first %> class="d-block w-100" alt="First slide">
+      </div>
+
+     <% @pics.each do |img| %>
+      <div class="carousel-item">
+        <%= image_tag img, class:"d-block w-100" %>
+      </div>
+      <% end %>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+
+  <!--<div class="cont-pics">
     <% @pics.each do |img| %>
-    <img  src=<%= img %>>
-    <% end %>
-  </div>
 
-  <div class= "w3-container modal-desc">
-    <% @description.each do |p| %>
-    <p style="color: white"><%= p %></p>
+    <img  src=<%= img %>>
+
     <% end %>
-  </div>
+
+    <p style="color: white"><%= @html_doc %></p>
+  </div>-->
 
 </div>

@@ -1,0 +1,28 @@
+.container-show {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  height: 70vh;
+  padding: 1.3vw;
+}
+
+.game-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+
+
+.cont-desc {
+  width: 33%;
+  margin-left: 2vw;
+  height: inherit;
+}
+
+.scroller {
+  width: 100%;
+  height: 90%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
