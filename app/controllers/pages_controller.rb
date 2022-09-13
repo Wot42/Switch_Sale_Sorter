@@ -36,7 +36,18 @@ class PagesController < ApplicationController
       show = true
       hammers = game.BanHammers
       hammers.each do |hammer|
-        show = false if hammer.user == @user
+        if hammer.perma_ban
+          show = false if hammer.user == @user && hammer.perma_ban
+        end
+        if hammer.owned
+          show = false if hammer.user == @user && hammer.owned && @user == current_user
+        end
+        if hammer.until_date
+          show = false if hammer.user == @user && ((hammer.until_date <=> Date.today) == - 1)
+        end
+        if hammer.until_price
+          show = false if hammer.user == @user && hammer.until_price > game.sale_price
+        end
       end
       @games.push(game) if show
     end
