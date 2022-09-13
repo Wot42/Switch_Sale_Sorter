@@ -38,7 +38,8 @@
     <div class="w-100 d-flex justify-content-between">
         <%=link_to "Go to Store", "https://www.nintendo.co.uk#{game.url}", class: "card-button", target: :_blank %>
          <% if active %>
-        <%= link_to "Bun this", ban_path(game), class: 'card-button', data: {'turbo-method' => :post} %>
+        <!--<%= link_to "Bun this", ban_path(game), class: 'card-button', data: {'turbo-method' => :post} %> -->
+        <div class = 'card-button' data-action="click->ajax-ban#postBanToRuby" data-user="<%=@user.id%>" data-game="<%=game.id%>">Bun this</div>
         <% end %>
         <% if ban %>
         <% hammer_id = 0 %>
@@ -46,7 +47,8 @@
         <% hammers.each do |hammer| %>
         <% hammer_id = hammer.id if hammer.user == @user %>
         <% end %>
-        <%= link_to "Restore", restore_path(hammer_id), class: 'card-button', data: {'turbo-method' => :delete} %>
+        <!--<%= link_to "Restore", restore_path(hammer_id), class: 'card-button', data: {'turbo-method' => :delete} %> -->
+        <div class = 'card-button' data-action="click->ajax-undo#deleteBanToRuby" data-hammer="<%=hammer_id%>">Restore</div>
         <% end %>
     </div>
   </div>
