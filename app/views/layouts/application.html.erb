@@ -17,19 +17,19 @@
     <%= render "shared/navbar"%>
 
     <div class="d-flex">
-      <% if user exists %>
+      <% if @user.left_color %>
       <div class="l-color <%= @user.left_color %>"></div>
       <% else %>
       <div class="l-color"></div>
-      <<% end %>>
+      <% end %>
       <div class="main-switch-container">
     <%= yield %>
       </div>
-      <% if user exists %>
+      <% if @user.right_color %>
       <div class="r-color" <%= @user.right_color %>></div>
       <% else %>
       <div class="r-color"></div>
-      <<% end %>>
+      <% end %>
     </div>
 
 
