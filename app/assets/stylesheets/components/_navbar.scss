@@ -29,24 +29,28 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  width: auto;
+  justify-content: space-around;
+  width: 50vw;
   height: 10vh;
   list-style-type: none;
+  margin: auto;
 }
 
 .sign-log {
   color: white;
-  border: 2px solid white;
-  padding: 10px;
-  border-radius: 10px;
+  border: 0.2em solid white;
+  padding: 0.5em;
+  border-radius: 0.6em;
   text-decoration: none;
   font-weight: 100;
+  font-size: 1.3vw;
   font-family: $nav-font;
+  height: 10vh;
 }
 
 .sign-log:hover {
   color: $nint-red;
-  border: 2px solid $nint-red;
+  border: 0.2em solid $nint-red;
   background-color: white;
 }
 

@@ -62,7 +62,8 @@
   margin: 0;
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 45px;
+  font-size: 2.4vw;
+  font-family: $nav-font;
 }
 
 .banner-info a {
@@ -77,10 +78,11 @@
 }
 
 .banner p {
-  font-size: 17px;
+  font-size: 1.6vw;
   margin-top: 10px;
   color: rgb(255, 255, 255);
   opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: bold;
+  font-family: 'Chakra Petch', sans-serif;
 }
