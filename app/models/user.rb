@@ -5,5 +5,4 @@ class User < ApplicationRecord
   has_many :BanHammers
   has_many :games, through: :BanHammers
   has_one_attached :photo
-
 end
