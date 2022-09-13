@@ -53,7 +53,7 @@ class UsersController < ApplicationController
       @games.push(game) if show
     end
 
-    @is_uers = @user == current_user
+    @is_users = @user == current_user
 
   end
 
