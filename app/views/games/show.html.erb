@@ -1,7 +1,12 @@
 <h1 style="color: white"><%= @game.title%></h1>
+<div data-controller="cookie-clicker">
+  <div class = 'card-button' data-action="click->cookie-clicker#filterSet" data-filter="water">coffey</div>
+</div>
+
+
 <% @description.each do |p| %>
 
-<p style="color: white"><%= p %></p>
+<p style="color: white"> <%= cookies[:sort] %> </p>
 
 <% end %>
 

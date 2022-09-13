@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   delete "/hammers/:id", to: "ban_hammers#destroy", as: "restore"
   post "/games/:id/banhammers", to: "ban_hammers#create", as: "ban"
   get "/games/:id", to: "games#show", as: "game"
+  post "/filter", to: "cookies#filter"
+  post "/sort", to: "cookies#sort"
+  post "/clearfilter", to: "cookies#clear_filter"
+  post "/clearsort", to: "cookies#clear_sort"
 end
 
 # rails generate model Games title:string pic:string price:integer sale_price:integer genre:string api_id:string

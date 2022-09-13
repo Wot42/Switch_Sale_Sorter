@@ -23,6 +23,7 @@ class GamesController < ApplicationController
         @pics.push(pic_url)
       end
     end
+    @user = current_user
 
 
   end

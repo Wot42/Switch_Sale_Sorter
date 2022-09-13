@@ -10,5 +10,8 @@ application.register("ajax-ban", AjaxBanController)
 import AjaxUndoController from "./ajax_undo_controller"
 application.register("ajax-undo", AjaxUndoController)
 
+import CookieClickerController from "./cookie_clicker_controller"
+application.register("cookie-clicker", CookieClickerController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
