@@ -17,8 +17,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       ##added by wot
       t.string :user_name
       t.string :picture
-      t.string :left_color
-      t.string :right_color
+      t.string :left_color, default: "blue"
+      t.string :right_color, default: "red"
 
 
 
