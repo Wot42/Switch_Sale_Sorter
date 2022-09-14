@@ -11,12 +11,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent" data-controller="cookie-clicker">
       <ul class="navbar-signlog" >
-            <div class="dropdown">
+
+          <div class="nav-button">
+            <div class="dropdown w-auto">
               <li class="nav-item" data-bs-toggle="dropdown"  class="btn dropdown-toggle d-flex align-items-center" id="dropdownMenuButton1" aria-expanded="false" >
                 <% namefilter = cookies[:filter] ? cookies[:filter] : "Filter" %>
                 <%= link_to namefilter, "#", class: "sign-log"%>
               </li>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="min-width: 100%">
 
                 <li><div class = "dropdown-item" data-action="click->cookie-clicker#filterClear" >Clear Filter</div></li>
                 <li><div class = "dropdown-item" data-action="click->cookie-clicker#filterSet" data-filter="action">Action</div></li>
@@ -34,42 +36,53 @@
                 <li><div class = "dropdown-item" data-action="click->cookie-clicker#filterSet" data-filter="sports">Sports</div></li>
                 <li><div class = "dropdown-item" data-action="click->cookie-clicker#filterSet" data-filter="strategy">Strategy</div></li>
               </ul>
+            </div>
           </div>
-          <div class="dropdown">
-            <% namesort = cookies[:sort] ? cookies[:sort] : "Sort" %>
-            <li class="nav-item" data-bs-toggle="dropdown"  class="btn dropdown-toggle d-flex align-items-center" id="dropdownMenuButton1" aria-expanded="false">
-              <%= link_to namesort, "#", class: "sign-log" %>
-            </li>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortClear" >Clear Sort</div></li>
-                <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="biggestdiscount">Best Discount</div></li>
-                <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="sale_start">Recently Added To Sales</div></li>
-                <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="sale_end">Ending Soon</div></li>
-                <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="lowest">Price(Lowest)</div></li>
-                <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="highest">Price(Highest)</div></li>
-                <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="title ASC">Title(A-Z)</div></li>
-                <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="title DESC">Title(Z-A)</div></li>
-              </ul>
+
+          <div class="nav-button">
+            <div class="dropdown w-auto">
+              <% namesort = cookies[:sort] ? cookies[:sort] : "Sort" %>
+              <li class="nav-item" data-bs-toggle="dropdown"  class="btn dropdown-toggle d-flex align-items-center" id="dropdownMenuButton1" aria-expanded="false">
+                <%= link_to namesort, "#", class: "sign-log" %>
+              </li>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"  style="min-width: 100%">
+                  <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortClear" >Clear Sort</div></li>
+                  <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="biggestdiscount">Best Discount</div></li>
+                  <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="sale_start">Recently Added To Sales</div></li>
+                  <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="sale_end">Ending Soon</div></li>
+                  <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="lowest">Price(Lowest)</div></li>
+                  <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="highest">Price(Highest)</div></li>
+                  <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="title ASC">Title(A-Z)</div></li>
+                  <li><div class = "dropdown-item" data-action="click->cookie-clicker#sortSet" data-sort="title DESC">Title(Z-A)</div></li>
+                </ul>
+            </div>
           </div>
+
+
         <% if user_signed_in? %>
+          <div class="nav-button">
             <li class="nav-item">
               <%= link_to "Undo", banned_path, class: "sign-log" %>
             </li>
+          </div>
+          <div class="nav-button">
             <li class="nav-item">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "sign-log" %>
             </li>
-
+          </div>
         <% else %>
-        <div>
+        <div class="nav-button">
           <li>
               <%= link_to "Sign Up", new_user_registration_path, class: "sign-log" %>
           </li>
         </div>
-        <div>
+
+        <div class="nav-button">
           <li>
               <%= link_to "Log in", new_user_session_path, class: "sign-log" %>
           </li>
         </div>
+
         <% end %>
       </ul>
     </div>
