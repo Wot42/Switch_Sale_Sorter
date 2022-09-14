@@ -27,6 +27,8 @@ export default class extends Controller {
     this.csrfToken = document
     .querySelector('meta[name="csrf-token"]')
     .getAttribute("content");
+    console.log(window.location.protocol)
+    console.log(window.location.host)
 
     fetch(`${window.location.protocol}${window.location.host}/games/${gamesId}/banhammers`, {
       method: "POST",
