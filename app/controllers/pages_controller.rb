@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
   def home
 
+    @users = User.all.sort_by{|k| k.BanHammers.size}.reverse
+    @user = current_user
 
     games_all = Game.activesale(true)
     games_all = games_all.filtering(cookies[:filter]) if cookies[:filter]
@@ -48,8 +50,6 @@ class PagesController < ApplicationController
 
 
     # filter
-    @users = User.all
-    @user = current_user
 
   end
 end
