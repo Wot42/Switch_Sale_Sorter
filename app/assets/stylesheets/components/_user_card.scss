@@ -2,15 +2,13 @@
   overflow: hidden;
   color: $light-font;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 160px;
-  width: 150px;
+  height: inherit;
+  width: 10vw;
   border-radius: 10px;
-  transition: width .5s, height .5s;
+  transition: width .3s, height .3s;
 }
 
 .user-card:hover {
-  height: 180px;
-  width: 180px;
 & p {
     font-size: 28px;
     opacity: 1;
@@ -19,7 +17,7 @@
 
 .avatar-card{
   width: 80%;
-  height: 50%;
+  height: 14vh;
 }
 
 .right-color-card {
@@ -39,7 +37,9 @@
 .avatar-container-card {
   border-radius: 10px;
   width: 100%;
+  height: inherit;
   display: flex;
+  flex-direction: column;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
@@ -52,12 +52,20 @@
   position: relative;
 }
 
-.user-card-pic {
-position: absolute;
-height: 50px;
-width: 50px;
-top: -24px;
-left: -9px;
+.star-pic {
+  position: absolute;
+  background-image: url("https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/c0e1e34c1b64249.png");
+  background-size: cover;
+  background-position: center;
+  width: 4vw;
+  height: 4vw;
+  top: -65%;
+  left: -9%;
+}
+
+.avatar-pic {
+height: 100%;
+width: 100%;
 
 }
 
