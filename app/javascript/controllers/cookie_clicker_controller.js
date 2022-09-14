@@ -76,7 +76,7 @@ export default class extends Controller {
     .querySelector('meta[name="csrf-token"]')
     .getAttribute("content");
 
-    fetch(`http://${window.location.host}/sort`, {
+    fetch(`${window.location.protocol}${window.location.host}/sort`, {
       method: "POST",
       headers: {
         mode: "no-cors",
