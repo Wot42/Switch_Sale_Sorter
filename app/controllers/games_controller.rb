@@ -4,8 +4,10 @@ require 'date'
 require "nokogiri"
 
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   def show
     @game = Game.find(params[:id])
+    @user = current_user
     html_file = URI.open("https://www.nintendo.co.uk#{@game.url}").read
     html_doc = Nokogiri::HTML(html_file)
     @description = []

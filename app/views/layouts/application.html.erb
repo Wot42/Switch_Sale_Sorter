@@ -18,7 +18,7 @@
 
     <div class="d-flex">
       <% if @user && @user.left_color %>
-        <div class="l-color" <%= @user.left_color %>></div>
+        <div class="l-color <%= @user.left_color %>"></div>
       <% else %>
         <div class="l-color"></div>
       <% end %>
@@ -28,7 +28,7 @@
       </div>
 
       <% if @user && @user.right_color %>
-        <div class="r-color" <%= @user.right_color %>></div>
+        <div class="r-color <%= @user.right_color %>"></div>
       <% else %>
         <div class="r-color"></div>
       <% end %>

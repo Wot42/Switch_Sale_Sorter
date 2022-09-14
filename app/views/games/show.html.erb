@@ -1,6 +1,6 @@
 
 <div class="container-top">
-
+  <% unless @user.nil? %>
   <div class="ban-buttns">
 
     <div class="perm">
@@ -29,18 +29,28 @@
 
 
   </div>
+  <% end %>
 
-  <div class="game-title">
-    <h1 style="color: white"><%= @game.title%></h1>
-  </div>
+
+    <%= image_tag @game.pic, class:"h-25" %>
+
 
   <div class="d-flex flex-column justify-content-center align-items-center" style="width: 15vw">
     <%=link_to "Go to Store", "https://www.nintendo.co.uk#{@game.url}", class: "store-buttn", target: :_blank %>
     <div class="d-flex w-50 h-50 mt-2 position-relative">
-      <div><%= image_tag "star.png", class:"user-card-pic position-absolute top-50 start-50 translate-middle" %></div>
-      <div class="left-color"></div>
-        <div class="w-75" style="background-color:rgb(88,80,80)"></div>
-      <div class="right-color"></div>
+      <% if @game.sale_price %>
+        <p class="card-text" style="font-weight: 650; color: white">Price: £<%=@game.sale_price%></p>
+      <% else %>
+        <p class="card-text" style="font-weight: 650; color: white">Price: £<%= @game.price %></p>
+      <% end %>
+
+    </div>
+    <div class="d-flex w-50 h-50 mt-2 position-relative">
+      <% if @game.sale_end %>
+        <p class="card-text" style="font-weight: 650; color: white">Sale Ends: <%= @game.sale_end.strftime("%d-%m-%Y") %></p>
+      <% else %>
+        <p class="card-text" style="font-weight: 650; color: white">No Sale</p>
+      <% end %>
     </div>
   </div>
 
