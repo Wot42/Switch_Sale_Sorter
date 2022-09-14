@@ -23,7 +23,7 @@
       <%= link_to "I own this one!", ban_path(@game,BanHammer: {
           user_id: current_user,
           game_id: @game.id,
-          owned: false
+          owned: true
        }), class: 'own-buttn', data: {'turbo-method' => :post} %>
     </div>
 

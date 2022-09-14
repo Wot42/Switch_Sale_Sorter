@@ -4,24 +4,33 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    games_all = Game.activesale(true)
-    games_all = games_all.filtering(cookies[:filter]) if cookies[:filter]
+
+    games_all = Game.all
+    games_all = Game.filtering(cookies[:filter]) if cookies[:filter]
+    games_all = games_all.select { |game_find| game_find[:active_sale] == true }
 
     if cookies[:sort]
-      if cookies[:sort] == "highest"
+      if cookies[:sort] == "Highest"
+        games_all = games_all.select {|game_find| game_find[:sale_price] }
         games_all = games_all.sort_by{|k| k[:sale_price]}.reverse
-      elsif cookies[:sort] == "title ASC"
-        games_all = games_all.sort_by{|k| k[:title]}
-      elsif cookies[:sort] == "title DESC"
-        games_all = games_all.sort_by{|k| k[:title]}.reverse
-      elsif cookies[:sort] == "lowest"
-        games_all = games_all.sort_by{|k| k[:sale_price]}
-      elsif cookies[:sort] == "biggestdiscount"
-        games_all = games_all.sort_by{|k| k[:discount_percentage]}.reverse
-      elsif cookies[:sort] == "sale_start"
-        games_all = games_all.sort_by{|k| k[:sale_start]}
-      elsif cookies[:sort] == "sale_end"
-        games_all = games_all.sort_by{|k| k[:sale_end]}
+      elsif cookies[:sort] == "Title A"
+        games_all = games_all.select {|game_find| game_find[:title] }
+        games_all = games_all.sort_by {|k| k[:title]}
+      elsif cookies[:sort] == "Title Z"
+        games_all = games_all.select {|game_find| game_find[:title] }
+        games_all = games_all.sort_by {|k| k[:title]}.reverse
+      elsif cookies[:sort] == "Lowest"
+        games_all = games_all.select {|game_find| game_find[:sale_price] }
+        games_all = games_all.sort_by {|k| k[:sale_price]}
+      elsif cookies[:sort] == "Discount"
+        games_all = games_all.select {|game_find| game_find[:discount_percentage] }
+        games_all = games_all.sort_by {|k| k[:discount_percentage]}.reverse
+      elsif cookies[:sort] == "Start"
+        games_all = games_all.select {|game_find| game_find[:sale_start] }
+        games_all = games_all.sort_by {|k| k[:sale_start]}
+      elsif cookies[:sort] == "End"
+        games_all = games_all.select {|game_find| game_find[:sale_end] }
+        games_all = games_all.sort_by {|k| k[:sale_end]}
       end
     end
     @games = []
@@ -62,14 +71,27 @@ class UsersController < ApplicationController
     games_all = games_all.select{|game_find| game_find[:tags].include? cookies[:filter] } if cookies[:filter]
 
     if cookies[:sort]
-      if cookies[:sort] == "highest"
-        games_all = games_all.sort_by{|k| k[:price]}.reverse
-      elsif cookies[:sort] == "title ASC"
-        games_all = games_all.sort_by{|k| k[:title]}
-      elsif cookies[:sort] == "title DESC"
-        games_all = games_all.sort_by{|k| k[:title]}.reverse
-      elsif cookies[:sort] == "lowest"
-        games_all = games_all.sort_by{|k| k[:price]}
+      if cookies[:sort] == "Highest"
+        games_all = games_all.select {|game_find| game_find[:sale_price] }
+        games_all = games_all.sort_by{|k| k[:sale_price]}.reverse
+      elsif cookies[:sort] == "Title A"
+        games_all = games_all.select {|game_find| game_find[:title] }
+        games_all = games_all.sort_by {|k| k[:title]}
+      elsif cookies[:sort] == "Title Z"
+        games_all = games_all.select {|game_find| game_find[:title] }
+        games_all = games_all.sort_by {|k| k[:title]}.reverse
+      elsif cookies[:sort] == "Lowest"
+        games_all = games_all.select {|game_find| game_find[:sale_price] }
+        games_all = games_all.sort_by {|k| k[:sale_price]}
+      elsif cookies[:sort] == "Discount"
+        games_all = games_all.select {|game_find| game_find[:discount_percentage] }
+        games_all = games_all.sort_by {|k| k[:discount_percentage]}.reverse
+      elsif cookies[:sort] == "Start"
+        games_all = games_all.select {|game_find| game_find[:sale_start] }
+        games_all = games_all.sort_by {|k| k[:sale_start]}
+      elsif cookies[:sort] == "End"
+        games_all = games_all.select {|game_find| game_find[:sale_end] }
+        games_all = games_all.sort_by {|k| k[:sale_end]}
       end
     end
 
