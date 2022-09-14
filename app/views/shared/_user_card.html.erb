@@ -1,25 +1,28 @@
 <div class="user-card">
-  <%= link_to user_path(user) do %>
-    <div class="avatar-container-card">
+  <div class="avatar-container-card">
+    <%= link_to user_path(user) do %>
 
-      <% if user && user.left_color %>
-        <div class="l-color <%= user.left_color %>"></div>
-      <% else %>
-        <div class="l-color"></div>
-      <% end %>
+      <div class="d-flex">
+        <% if user && user.left_color %>
+          <div class="left-color-card <%= user.left_color %>"></div>
+        <% else %>
+          <div class="left-color-card"></div>
+        <% end %>
+        <div class="avatar-card">
+          <img class="avatar-pic" alt="avatar-square" src= <%=user.picture%> />
+        </div>
+        <% if user && user.right_color %>
+          <div class="right-color-card <%= user.right_color %>"></div>
+        <% else %>
+          <div class="right-color-card"></div>
+        <% end %>
+      </div>
 
-      <img class="avatar-card" alt="avatar-square" src= <%=user.picture%> />
-
-      <% if user && user.right_color %>
-        <div class="r-color <%= user.right_color %>"></div>
-      <% else %>
-        <div class="r-color"></div>
-      <% end %>
-
-    <div class="user-card-info">
-      <p><%= user.user_name %></p>
-      <%= image_tag "star.png", class:"user-card-pic" %>
-    </div>
-    </div>
-  <% end %>
+      <div class="user-card-info">
+        <p><%= user.user_name %></p>
+        <div class="star-pic" >
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
