@@ -4,33 +4,26 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    games_all = Game.all
-    if params.present?
+    games_all = Game.activesale(true)
+    games_all = games_all.filtering(cookies[:filter]) if cookies[:filter]
 
-      if params[:filter]
-        games_all = Game.filtering(params[:filter])
-        if params[:sort]
-          if params[:sort] == "highest"
-            games_all = Game.order("price DESC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
-          elsif params[:sort] == "title ASC"
-            games_all = Game.order("games.title ASC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
-          elsif params[:sort] == "title DESC"
-            games_all = Game.order("games.title DESC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
-          elsif params[:sort] == "lowest"
-            games_all = Game.order("price ASC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
-          elsif params[:sort] == "biggestdiscount"
-            games_all = Game.order("discount_percentage DESC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
-          elsif params[:sort] == "sale_start"
-            games_all = Game.order("sale_start DESC").and(Game.where("'#{params[:filter]}' = ANY (tags)"))
-          end
-        end
-      else
-        games_all = Game.all
+    if cookies[:sort]
+      if cookies[:sort] == "highest"
+        games_all = games_all.sort_by{|k| k[:sale_price]}.reverse
+      elsif cookies[:sort] == "title ASC"
+        games_all = games_all.sort_by{|k| k[:title]}
+      elsif cookies[:sort] == "title DESC"
+        games_all = games_all.sort_by{|k| k[:title]}.reverse
+      elsif cookies[:sort] == "lowest"
+        games_all = games_all.sort_by{|k| k[:sale_price]}
+      elsif cookies[:sort] == "biggestdiscount"
+        games_all = games_all.sort_by{|k| k[:discount_percentage]}.reverse
+      elsif cookies[:sort] == "sale_start"
+        games_all = games_all.sort_by{|k| k[:sale_start]}
+      elsif cookies[:sort] == "sale_end"
+        games_all = games_all.sort_by{|k| k[:sale_end]}
       end
-    else
-      games_all = Game.all
     end
-
     @games = []
     games_all.each do |game|
       show = true
@@ -61,12 +54,26 @@ class UsersController < ApplicationController
     @user = current_user
 
     hammers = @user.BanHammers
-    @games = []
+    games_all = []
     hammers.each do |hammer|
-      @games.push(hammer.game)
+      games_all.push(hammer.game)
     end
 
-    # yemis code here but modified
+    games_all = games_all.select{|game_find| game_find[:tags].include? cookies[:filter] } if cookies[:filter]
+
+    if cookies[:sort]
+      if cookies[:sort] == "highest"
+        games_all = games_all.sort_by{|k| k[:price]}.reverse
+      elsif cookies[:sort] == "title ASC"
+        games_all = games_all.sort_by{|k| k[:title]}
+      elsif cookies[:sort] == "title DESC"
+        games_all = games_all.sort_by{|k| k[:title]}.reverse
+      elsif cookies[:sort] == "lowest"
+        games_all = games_all.sort_by{|k| k[:price]}
+      end
+    end
+
+    @games = games_all
 
   end
 
