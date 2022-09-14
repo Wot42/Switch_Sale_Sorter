@@ -3,7 +3,7 @@
 }
 
 .blue {
-  background: linear-gradient(0deg, rgba(24,112,133,1) 35%, rgba(46,147,155,1) 59%);
+  background: linear-gradient(0deg, rgba(24,112,133,1) 0%, rgba(46,147,155,1) 100%);
 }
 
 .green {
@@ -15,9 +15,17 @@
 }
 
 .pink {
-  background: linear-gradient(0deg, rgb(133, 24, 120) 35%, rgb(253, 73, 217) 59%);
+  background: linear-gradient(0deg, rgb(133, 24, 120) 0, rgb(253, 73, 217) 100%);
 }
 
 .turquoise {
-  background: linear-gradient(0deg, rgb(24, 126, 133) 35%, rgb(73, 250, 253) 59%);
+  background: linear-gradient(0deg, rgb(24, 126, 133) 0%, rgb(73, 250, 253) 100%);
+}
+
+.orange {
+  background: linear-gradient(0deg, rgb(127, 106, 0) 0%, rgb(250, 216, 42) 100%);
+}
+
+.purple {
+  background: linear-gradient(0deg, rgb(85, 0, 89) 0%, rgb(190, 7, 199) 100%);
 }
