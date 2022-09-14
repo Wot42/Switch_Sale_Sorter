@@ -19,22 +19,57 @@
 .ban-buttns {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 20vw;
+  align-items: stretch;
 }
 
 .perm {
   display: flex;
   justify-content: flex-start;
+  margin: 1.1vw;
 }
 
 .until {
   display: flex;
   justify-content: center;
+  margin: 1.1vw;
 }
 
 .own {
   display: flex;
   justify-content: flex-end;
+  margin: 1.1vw;
+}
+
+.price-sale-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 15vw;
+}
+
+.price-bomb {
+  display: flex;
+  background-image: url("http://www.clker.com/cliparts/8/U/A/c/6/c/yellow-explosion-hi.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 80%;
+  height: 50%;
+}
+
+.price-info {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  top: 3.2vw;
+  left: 2vw;
+}
+
+.sale-info {
+  display: flex;
 }
 
 .game-title {
