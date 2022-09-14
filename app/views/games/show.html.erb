@@ -34,7 +34,7 @@
     <h1 style="color: white"><%= @game.title%></h1>
   </div>
 
-  <div class="d-flex flex-column justify-content-center align-items-center">
+  <div class="d-flex flex-column justify-content-center align-items-center" style="width: 15vw">
     <%=link_to "Go to Store", "https://www.nintendo.co.uk#{@game.url}", class: "store-buttn", target: :_blank %>
     <div class="d-flex w-50 h-50 mt-2 position-relative">
       <div><%= image_tag "star.png", class:"user-card-pic position-absolute top-50 start-50 translate-middle" %></div>

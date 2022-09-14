@@ -32,7 +32,7 @@
 }
 
 .new-form-pic {
-  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("http://wallpapercave.com/wp/wc1716402.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("https://wallpaperset.com/w/full/4/4/d/473743.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -50,4 +50,8 @@
 & .form-inputs > .btn {
   color: white;
 }
+}
+
+.form-actions > .btn {
+  color: white;
 }
