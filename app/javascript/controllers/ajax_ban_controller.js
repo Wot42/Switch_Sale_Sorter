@@ -30,7 +30,7 @@ export default class extends Controller {
     console.log(window.location.protocol)
     console.log(window.location.host)
 
-    fetch(`${window.location.protocol}${window.location.host}/games/${gamesId}/banhammers`, {
+    fetch(`${window.location.protocol}/games/${gamesId}/banhammers`, {
       method: "POST",
       headers: {
         mode: "no-cors",
