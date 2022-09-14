@@ -29,8 +29,9 @@ export default class extends Controller {
     .getAttribute("content");
     console.log(window.location.protocol)
     console.log(window.location.host)
+    banUrl = `${window.location.protocol}/games/${gamesId}/banhammers`
 
-    fetch(`${window.location.protocol}/games/${gamesId}/banhammers`, {
+    fetch(banUrl, {
       method: "POST",
       headers: {
         mode: "no-cors",
