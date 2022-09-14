@@ -21,7 +21,7 @@ export default class extends Controller {
   .querySelector('meta[name="csrf-token"]')
   .getAttribute("content");
 
-  fetch(`http://${window.location.host}/hammers/${hamerId}`, {
+  fetch(`${window.location.protocol}${window.location.host}/hammers/${hamerId}`, {
     method: "DELETE",
     headers: {
       mode: "no-cors",

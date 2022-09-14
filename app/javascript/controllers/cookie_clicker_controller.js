@@ -18,7 +18,7 @@ export default class extends Controller {
     .querySelector('meta[name="csrf-token"]')
     .getAttribute("content");
 
-    fetch(`http://${window.location.host}/filter`, {
+    fetch(`${window.location.protocol}${window.location.host}/filter`, {
       method: "POST",
       headers: {
         mode: "no-cors",
@@ -46,7 +46,7 @@ export default class extends Controller {
     .querySelector('meta[name="csrf-token"]')
     .getAttribute("content");
 
-    fetch(`http://${window.location.host}/clearfilter`, {
+    fetch(`${window.location.protocol}${window.location.host}/clearfilter`, {
       method: "POST",
       headers: {
         mode: "no-cors",
@@ -104,7 +104,7 @@ export default class extends Controller {
     .querySelector('meta[name="csrf-token"]')
     .getAttribute("content");
 
-    fetch(`http://${window.location.host}/clearsort`, {
+    fetch(`${window.location.protocol}${window.location.host}/clearsort`, {
       method: "POST",
       headers: {
         mode: "no-cors",

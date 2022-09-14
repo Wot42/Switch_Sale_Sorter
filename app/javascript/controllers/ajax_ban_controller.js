@@ -28,7 +28,7 @@ export default class extends Controller {
     .querySelector('meta[name="csrf-token"]')
     .getAttribute("content");
 
-    fetch(`http://${window.location.host}/games/${gamesId}/banhammers`, {
+    fetch(`${window.location.protocol}${window.location.host}/games/${gamesId}/banhammers`, {
       method: "POST",
       headers: {
         mode: "no-cors",
