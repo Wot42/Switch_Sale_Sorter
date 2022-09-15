@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 50vw;
+  width: 60vw;
   height: 10vh;
   list-style-type: none;
   margin: auto;
@@ -57,4 +57,8 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
 }

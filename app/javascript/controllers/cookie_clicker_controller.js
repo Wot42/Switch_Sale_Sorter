@@ -32,7 +32,7 @@ export default class extends Controller {
 
     .then((response) => response.body)
     .then((data)=> console.log(data))
-    .then(location.reload());
+    // .then(location.reload());
   }
 
   filterClear(event){

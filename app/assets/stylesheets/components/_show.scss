@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-  height: 60vh;
+  height: 65vh;
   padding: 1.3vw;
 }
 
@@ -13,28 +13,63 @@
   text-align: center;
   margin-top: 3vh;
   margin-bottom: 2vh;
-  justify-content: space-around
 }
 
 .ban-buttns {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 20vw;
+  align-items: stretch;
 }
 
 .perm {
   display: flex;
   justify-content: flex-start;
+  margin: 1.1vw;
 }
 
 .until {
   display: flex;
   justify-content: center;
+  margin: 1.1vw;
 }
 
 .own {
   display: flex;
   justify-content: flex-end;
+  margin: 1.1vw;
+}
+
+.price-sale-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 15vw;
+}
+
+.price-bomb {
+  display: flex;
+  background-image: url("http://www.clker.com/cliparts/8/U/A/c/6/c/yellow-explosion-hi.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 80%;
+  height: 50%;
+}
+
+.price-info {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  top: 3.2vw;
+  left: 2vw;
+  font-size: 1.2vw;
+}
+
+.sale-info {
+  display: flex;
 }
 
 .game-title {
@@ -43,16 +78,16 @@
   align-items: center;
   width: 50%;
   padding-right: 4.5vw;
-& h1 {
-  font-size: 3.5vw;
-}
 }
 
+.title-pic {
+  background-size: cover;
+  background-position: center;
+}
 
 .cont-desc {
   width: 33%;
   margin-left: 2vw;
-  height: inherit;
 }
 
 .scroller {
