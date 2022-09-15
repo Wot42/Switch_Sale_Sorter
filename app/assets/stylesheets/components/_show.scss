@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-  height: 60vh;
+  height: 65vh;
   padding: 1.3vw;
 }
 
@@ -13,7 +13,6 @@
   text-align: center;
   margin-top: 3vh;
   margin-bottom: 2vh;
-  justify-content: space-around
 }
 
 .ban-buttns {
@@ -66,6 +65,7 @@
   position: absolute;
   top: 3.2vw;
   left: 2vw;
+  font-size: 1.2vw;
 }
 
 .sale-info {
@@ -78,16 +78,16 @@
   align-items: center;
   width: 50%;
   padding-right: 4.5vw;
-& h1 {
-  font-size: 3.5vw;
-}
 }
 
+.title-pic {
+  background-size: cover;
+  background-position: center;
+}
 
 .cont-desc {
   width: 33%;
   margin-left: 2vw;
-  height: inherit;
 }
 
 .scroller {

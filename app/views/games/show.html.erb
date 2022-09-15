@@ -31,18 +31,18 @@
   </div>
   <% end %>
 
-
-    <%= image_tag @game.pic, class:"h-25" %>
-
+    <div class="game-title">
+      <%= image_tag @game.pic, class:"title-pic" %>
+    </div>
 
   <div class="price-sale-info">
     <%=link_to "Go to Store", "https://www.nintendo.co.uk#{@game.url}", class: "store-buttn", target: :_blank %>
     <div class="price-bomb">
       <div class="price-info">
         <% if @game.sale_price %>
-          <p class="card-text" style="font-weight: 650; color: black">Price: £<%=@game.sale_price%></p>
+          <p class="card-text" style="font-weight: 650; color: black;">Price: £<%=@game.sale_price%></p>
         <% else %>
-          <p class="card-text" style="font-weight: 650; color: black">Price: £<%= @game.price %></p>
+          <p class="card-text" style="font-weight: 650; color: black;">Price: £<%= @game.price %></p>
         <% end %>
       </div>
     </div>
