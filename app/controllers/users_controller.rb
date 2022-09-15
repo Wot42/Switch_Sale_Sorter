@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     games_all = Game.all
     games_all = Game.filtering(cookies[:filter]) if cookies[:filter]
     games_all = games_all.select { |game_find| game_find[:active_sale] == true }
+    games_all = games_all.select { |game_find| game_find[:pic] }
 
     if cookies[:sort]
       if cookies[:sort] == "Highest"
@@ -69,6 +70,7 @@ class UsersController < ApplicationController
     end
 
     games_all = games_all.select{|game_find| game_find[:tags].include? cookies[:filter] } if cookies[:filter]
+    games_all = games_all.select { |game_find| game_find[:pic] }
 
     if cookies[:sort]
       if cookies[:sort] == "Highest"
