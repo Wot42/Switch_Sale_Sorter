@@ -9,7 +9,11 @@
           <div class="left-color-card"></div>
         <% end %>
         <div class="avatar-card">
-          <img class="avatar-pic" alt="avatar-square" src= <%=user.picture%> />
+          <% if user.picture %>
+            <img class="avatar-pic" alt="avatar-square" src= <%=user.picture%>>
+          <% else %>
+            <img class="avatar-pic" alt="avatar-square" src= "https://seeklogo.com/images/N/nintendo-switch-logo-2F43DDEBAE-seeklogo.com.png">
+          <% end %>
         </div>
         <% if user && user.right_color %>
           <div class="right-color-card <%= user.right_color %>"></div>
