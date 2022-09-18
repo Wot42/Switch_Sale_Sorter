@@ -1,5 +1,7 @@
 <div data-controller="ajax-undo">
-<br>
+  <div class="d-flex justify-content-end m-3">
+    <p class="text-white"><%="total: #{ @games.size}" %></p>
+  </div>
   <div class="game-cards">
     <% @games.each do |game| %>
     <%= render "shared/card_base", game: game, ban: true, active: false %>

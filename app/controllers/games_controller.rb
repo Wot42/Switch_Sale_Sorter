@@ -31,18 +31,35 @@ class GamesController < ApplicationController
   end
 
   def update_all
-    curent_games = Game.all
+    hammers_list = BanHammer.all.select { |hammer_find| hammer_find[:until_date] }
+    hammers_list.each do |entry|
+      if ((entry[:until_date] <=> Date.today) == -1)
+        ban_it = true
+        ban_it = false if entry[:perma_ban] && entry[:perma_ban] == true
+        ban_it = false if entry[:owned] && entry[:owned] == true
+        ban_it = false if entry[:until_price]
+
+        entry.destroy if ban_it == true
+      end
+    end
+
+    curent_games = Game.all.select { |game_find| game_find[:active_sale] == true }
     curent_games.each do |entry|
       if ((entry[:sale_end] <=> Date.today) == -1)
 
-        entry[:sale_start] = nil
-        entry[:sale_end] = nil
-        entry[:active_sale] = false
-        entry.save
-
+        if entry.BanHammers[0]
+          entry[:sale_start] = nil
+          entry[:sale_end] = nil
+          entry[:active_sale] = false
+          entry.save
+        else
+          entry.destroy
+        end
       end
     end
     curent_games = Game.all
+
+
 
     url = "https://search.nintendo-europe.com/en/select?rows=99999&fq=price_has_discount_b%3Atrue%20AND%20system_type%3Anintendoswitch*&q=*&sort=sorting_title%20asc&start=0&wt=json"
     game_serialized = URI.open(url).read
@@ -70,6 +87,8 @@ class GamesController < ApplicationController
     end
 
     update_dates_new()
+
+    cookies[:last_updated] = Date.today
   end
 
   private

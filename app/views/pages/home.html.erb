@@ -1,4 +1,4 @@
-<div>
+<div data-update="<%= cookies[:last_updated] %>">
   <% if !user_signed_in?%>
   <%= render "shared/banner" %>
   <% else%>
@@ -6,7 +6,10 @@
       <%= render "shared/users_list"%>
     </div>
     <div class="d-flex justify-content-center text-white"><h2 style="font-size: 3.5vw">YOUR CURATED CATALOGUE</h2></div>
-    <div class="mt-5">
+    <div class="d-flex justify-content-end ">
+      <p class="text-white"><%="total: #{ @games.size}" %></p>
+    </div>
+    <div class="mt-4">
       <div class="game-cards" data-controller="ajax-ban">
         <% @games.each do |game| %>
         <%= render "shared/card_base", game: game, ban: false, active: true  %>
@@ -15,18 +18,3 @@
     </div>
     <%end %>
 </div>
-
-
-
-
-<%# <%=<div class="container"> H</div>
-
-<div class="main-switch-container"> H</div>
-<div class="d-flex flex-column align-items-center">
-  <div style="background-color: red; width:100% ">100</div>
-  <div style="background-color: red; width:95% ">95</div>
-  <div style="background-color: red; width:90% ">90</div>
-  <div style="background-color: red; width:85% ">85</div>
-  <div style="background-color: red; width:80% ">80</div>
-  <div style="background-color: red; width:75% ">75</div>
-</div> %>

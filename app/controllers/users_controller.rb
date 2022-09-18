@@ -28,7 +28,7 @@ class UsersController < ApplicationController
         games_all = games_all.sort_by {|k| k[:discount_percentage]}.reverse
       elsif cookies[:sort] == "Start"
         games_all = games_all.select {|game_find| game_find[:sale_start] }
-        games_all = games_all.sort_by {|k| k[:sale_start]}
+        games_all = games_all.sort_by {|k| k[:sale_start]}.reverse
       elsif cookies[:sort] == "End"
         games_all = games_all.select {|game_find| game_find[:sale_end] }
         games_all = games_all.sort_by {|k| k[:sale_end]}
@@ -90,7 +90,7 @@ class UsersController < ApplicationController
         games_all = games_all.sort_by {|k| k[:discount_percentage]}.reverse
       elsif cookies[:sort] == "Start"
         games_all = games_all.select {|game_find| game_find[:sale_start] }
-        games_all = games_all.sort_by {|k| k[:sale_start]}
+        games_all = games_all.sort_by {|k| k[:sale_start]}.reverse
       elsif cookies[:sort] == "End"
         games_all = games_all.select {|game_find| game_find[:sale_end] }
         games_all = games_all.sort_by {|k| k[:sale_end]}
