@@ -47,7 +47,7 @@ class PagesController < ApplicationController
           show = false if hammer.user == @user && hammer.owned && @user == current_user
         end
         if hammer.until_date
-          show = false if hammer.user == @user && ((hammer.until_date <=> Date.today) == 1)
+          show = false if hammer.user == @user && ((hammer.until_date <=> Date.today) >= 0)
         end
         if hammer.until_price
           show = false if hammer.user == @user && hammer.until_price > game.sale_price
